@@ -1,0 +1,182 @@
+// SCSS Variables
+$primary-color: #646cff;
+$secondary-color: #535bf2;
+$background-dark: #242424;
+$background-light: #ffffff;
+$text-dark: rgba(255, 255, 255, 0.87);
+$text-light: #213547;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $text-dark;
+  background-color: $background-dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: $primary-color;
+  text-decoration: inherit;
+  
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  
+  &:hover {
+    filter: drop-shadow(0 0 2em #{$primary-color}aa);
+  }
+  
+  &.vanilla:hover {
+    filter: drop-shadow(0 0 2em #3178c6aa);
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  
+  &:hover {
+    border-color: $primary-color;
+  }
+  
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: $text-light;
+    background-color: $background-light;
+  }
+  
+  a:hover {
+    color: #747bff;
+  }
+  
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+// Additional SCSS styles for @kitajs/html components
+.kita-button {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  color: white;
+  border: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  
+  .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+  
+  &.online .status-dot {
+    background-color: #4caf50;
+    animation: pulse 2s infinite;
+  }
+  
+  &.offline .status-dot {
+    background-color: #f44336;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.feature-list {
+  text-align: left;
+  margin: 2rem 0;
+  
+  h3 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
