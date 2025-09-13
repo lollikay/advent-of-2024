@@ -1,0 +1,144 @@
+// Variables
+$primary-color: #2563eb;
+$secondary-color: #64748b;
+$background-color: #f8fafc;
+$text-color: #334155;
+$border-color: #e2e8f0;
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+// Mixins
+@mixin card-style {
+  background: white;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+}
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// Layout
+.header {
+  background: white;
+  border-bottom: 1px solid $border-color;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  h1 {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  nav {
+    display: flex;
+    gap: 1rem;
+    
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: $background-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  color: $secondary-color;
+  border-top: 1px solid $border-color;
+}
+
+// Components
+.card {
+  @include card-style;
+  
+  &-title {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  &-content {
+    color: $secondary-color;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+// Typography
+h2 {
+  color: $primary-color;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+    
+    nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
+  .main {
+    padding: 1rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

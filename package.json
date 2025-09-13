@@ -1,0 +1,29 @@
+{
+  "name": "advent-of-2024",
+  "version": "1.0.0",
+  "description": "A simple static website generator with TSX templating, SCSS, and TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build-simple.js",
+    "build:tsx": "node build.js",
+    "dev": "npm run build && npx http-server dist -p 3000 -o",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "static-site",
+    "tsx",
+    "typescript",
+    "scss",
+    "esbuild"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "esbuild": "^0.25.9",
+    "http-server": "^14.1.1",
+    "sass": "^1.92.1",
+    "typescript": "^5.9.2"
+  }
+}
