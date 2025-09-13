@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-
-import Layout from '../../components/Layout';
+import { Layout } from '../../app/ui';
 
 export const CssChallengesPage = () => {
   return (

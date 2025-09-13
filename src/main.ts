@@ -1,9 +1,3 @@
-import { HomePage } from './pages/home'
+import { HomePage } from './pages/home/index.tsx'
 
-const appContent = `
-  <div>
-    ${HomePage()}
-  </div>
-`
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = appContent
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = HomePage().toString()

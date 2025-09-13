@@ -8,7 +8,7 @@ export const Header = () => {
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/css-challenges">CSS Challenges</a></li>
+          <li><a href="/src/pages/css-challenges/index.html">CSS Challenges</a></li>
         </ul>
       </nav>
     </header>
