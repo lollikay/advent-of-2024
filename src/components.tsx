@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html'
 
 // Example component using @kitajs/html
