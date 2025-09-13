@@ -1,5 +1,4 @@
 import { h, VNode } from '../jsx-runtime';
-import '../types';
 
 export interface LayoutProps {
   title: string;

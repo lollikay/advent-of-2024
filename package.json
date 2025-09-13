@@ -4,8 +4,7 @@
   "description": "A simple static website generator with TSX templating, SCSS, and TypeScript",
   "main": "index.js",
   "scripts": {
-    "build": "node build-simple.js",
-    "build:tsx": "node build.js",
+    "build": "node build.js",
     "dev": "npm run build && npx http-server dist -p 3000 -o",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit"

@@ -38,10 +38,13 @@ export function renderToString(vnode: VNode | string): string {
   const attributes = Object.entries(props)
     .filter(([key]) => key !== 'children')
     .map(([key, value]) => {
+      // Convert className to class
+      const attrName = key === 'className' ? 'class' : key;
+      
       if (typeof value === 'boolean') {
-        return value ? key : '';
+        return value ? attrName : '';
       }
-      return `${key}="${escapeHtml(String(value))}"`;
+      return `${attrName}="${escapeHtml(String(value))}"`;
     })
     .filter(Boolean)
     .join(' ');

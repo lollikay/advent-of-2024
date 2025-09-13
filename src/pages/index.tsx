@@ -1,5 +1,4 @@
 import { h, renderToString } from '../jsx-runtime';
-import '../types';
 import { Layout } from '../components/Layout';
 import { Card } from '../components/Card';
 

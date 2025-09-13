@@ -1,5 +1,4 @@
 import { h, VNode } from '../jsx-runtime';
-import '../types';
 
 export interface CardProps {
   title: string;
