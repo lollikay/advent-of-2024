@@ -4,31 +4,29 @@ import { NoChallenge } from "@features/no-challenge/ui";
 export const challengeContainerId = 'challenge-container';
 
 export class ChallengesSwitcherService {
-  challengeId: number = 0;
+  private container = document.getElementById(challengeContainerId);
 
-  challengeComponents: Record<number, () => string> = {
-    1: () => CssChallenge01().toString(),
+  challengeComponents: Record<number, () => JSX.Element> = {
+    1: CssChallenge01,
   };
 
   constructor() { }
+
+  private renderChallenge(id: number) {
+    if (!this.container) return;
+
+    this.container.innerHTML = '';
+
+    const challengeComponent = this.challengeComponents[id];
+    if (challengeComponent) {
+      const challengeElement = challengeComponent().toString();
+      this.container.innerHTML = challengeElement;
+    } else {
+      this.container.innerHTML = NoChallenge().toString();
+    }
+  }
   
   setChallenge(id: number) {
-    this.challengeId = id;
-    this.renderChallenge();
-  }
-
-  renderChallenge() {
-    const container = document.getElementById(challengeContainerId);
-    if (!container) return;
-
-    container.innerHTML = ''; // Clear previous content
-
-    const challengeComponent = this.challengeComponents[this.challengeId];
-    if (challengeComponent) {
-      const challengeElement = challengeComponent();
-      container.innerHTML = challengeElement;
-    } else {
-      container.innerHTML = NoChallenge().toString();
-    }
+    this.renderChallenge(id);
   }
 }

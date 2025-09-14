@@ -20,7 +20,6 @@ export class CalendarService {
   }
 
   private handleDayClick(event: Event) {
-    console.debug('CalendarService: handleDayClick event', event);
     const target = event.target as HTMLElement;
     if (!target.matches(`[${dayAttribute}]`)) {
       return;
