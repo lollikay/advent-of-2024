@@ -1,0 +1,11 @@
+.header {
+  padding: 1.5rem 0;
+  background-color: var(--c-accent-1);
+  color: var(--c-base-light);
+
+  h1 {
+    &:first-child:last-child {
+      margin: 0;
+    }
+  }
+}

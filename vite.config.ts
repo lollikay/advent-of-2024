@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   // Enable JSX transformation for @kitajs/html
@@ -18,5 +18,10 @@ export default defineConfig({
   // Configure file extensions
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.css'],
+    alias: {
+      '@shared': '/src/shared',
+      '@widgets': '/src/widgets',
+      '@features': '/src/features',
+    },
   },
 })
