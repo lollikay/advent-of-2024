@@ -17,13 +17,9 @@ export class ChallengesSwitcherService {
 
     this.container.innerHTML = '';
 
-    const challengeComponent = this.challengeComponents[id];
-    if (challengeComponent) {
-      const challengeElement = challengeComponent().toString();
-      this.container.innerHTML = challengeElement;
-    } else {
-      this.container.innerHTML = NoChallenge().toString();
-    }
+    const challengeComponent = this.challengeComponents[id] ?? NoChallenge;
+    const challengeElement = challengeComponent().toString();
+    this.container.innerHTML = challengeElement;
   }
   
   setChallenge(id: number) {
