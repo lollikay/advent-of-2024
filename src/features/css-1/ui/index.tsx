@@ -5,7 +5,7 @@ import '@shared/ui/margins/style.scss';
 import './style.scss';
 import { PhotoGalleryCard } from '../components/gallery-card/ui';
 
-const photoes = [
+const photos = [
   {
     src: '/assets/images/css-challenge-01/josh-harrison-jY_fTS7ZE98-unsplash.jpg',
   },
@@ -26,8 +26,8 @@ const photoes = [
   },
 ];
 
-const maxVisiblePhotoes = 5;
-const overflowLength = photoes.length - maxVisiblePhotoes;
+const maxVisiblePhotos = 5;
+const overflowLength = photos.length - maxVisiblePhotos;
 const galleries = Array.from({ length: 6 });
 
 export const CssChallenge01 = () => {
@@ -36,20 +36,20 @@ export const CssChallenge01 = () => {
       <h1>CSS Challenge 01: photo gallery card</h1>
       {galleries.map((_, index) => (
         <>
-          <h2>Photo gallery with {index + 1} photoes</h2>
+          <h2>Photo gallery with {index + 1} photos</h2>
           <div class="photo-gallery-container">
             <div class="photo-gallery mb-5">
-              {photoes.map((photo, photoIndex) => {
+              {photos.map((photo, photoIndex) => {
                 /**
-                 * Generate 6 examples with different number of photoes
+                 * Generate 6 examples with different number of photos
                  * Show overflow only on the last gallery.
                  * This is purely convenience generation logic for the demo page.
                  */
                 if (photoIndex > index) return null;
-                if ((photoIndex + 1) > maxVisiblePhotoes) return null;
+                if ((photoIndex + 1) > maxVisiblePhotos) return null;
                 const shouldShowOverflow =
                   index === (galleries.length - 1) &&
-                  photoIndex === (maxVisiblePhotoes - 1) &&
+                  photoIndex === (maxVisiblePhotos - 1) &&
                   overflowLength > 0;
                 return (
                   <PhotoGalleryCard
