@@ -1,0 +1,84 @@
+.toggle {
+  --c-toggle-bg: #7D7D7D;
+  --c-toggle-handle: #000;
+  --c-toggle-border: transparent;
+  --c-active-toggle-bg: #00FF94;
+  --c-active-toggle-handle: #000;
+  --c-active-toggle-border: transparent;
+  --toggle-size: 3rem;
+
+  margin: 0 -0.5rem;
+
+  &-checkbox {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    &:checked + .toggle-element {
+      background-color: var(--c-active-toggle-bg);
+      border-color: var(--c-active-toggle-border);
+
+      &::after {
+        left: calc(var(--toggle-size) * 1.5);
+        background-color: var(--c-active-toggle-handle);
+        mask: 
+          url('/assets/images/css-challenge-02/check.svg') 50% 50% / 50% no-repeat, 
+          linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
+        mask-composite: exclude;
+      }
+    }
+
+    &:focus + .toggle-element {
+      outline: 2px dashed var(--c-active-toggle-bg);
+      outline-offset: 2px;
+    }
+
+    &:disabled + .toggle-element {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &-element {
+    display: inline-block;
+    width: calc(var(--toggle-size) * 2.5);
+    padding: calc(var(--toggle-size) * 0.15);
+    margin: 0 0.5rem;
+    vertical-align: middle;
+    background: var(--c-toggle-bg);
+    border: calc(var(--toggle-size) * 0.05) solid var(--c-toggle-border);
+    border-radius: var(--toggle-size);
+    transition: background-color 0.2s;
+
+    &::after {
+      content: '';
+      position: relative;
+      left: 0;
+      display: block;
+      height: var(--toggle-size);
+      width: var(--toggle-size);
+      background: var(--c-toggle-handle);
+      border-radius: 50%;
+      transition: left 0.3s, background-color 0.2s;
+    }
+
+    &::after {
+      background: var(--c-toggle-handle);
+      transition: left 0.3s;
+    }
+  }
+
+  &.themed {
+    --c-toggle-bg: transparent;
+    --c-toggle-handle: var(--c-base-dark);
+    --c-toggle-border: var(--c-base-dark);
+    --c-active-toggle-bg: var(--c-accent-1);
+    --c-active-toggle-handle: var(--c-base-light);
+    --c-active-toggle-border: var(--c-accent-1);
+    --toggle-size: 1.5rem;
+  }
+}

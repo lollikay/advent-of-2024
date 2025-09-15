@@ -1,4 +1,5 @@
 import { CssChallenge01 } from "@features/css-1/ui";
+import { CssChallenge02 } from "@features/css-2/ui";
 import { NoChallenge } from "@features/no-challenge/ui";
 
 export const challengeContainerId = 'challenge-container';
@@ -6,8 +7,9 @@ export const challengeContainerId = 'challenge-container';
 export class ChallengesSwitcherService {
   private container = document.getElementById(challengeContainerId);
 
-  challengeComponents: Record<number, () => JSX.Element> = {
+  private challengeComponents: Record<number, () => JSX.Element> = {
     1: CssChallenge01,
+    2: CssChallenge02,
   };
 
   constructor() { }
