@@ -65,11 +65,6 @@
       border-radius: 50%;
       transition: left 0.3s, background-color 0.2s;
     }
-
-    &::after {
-      background: var(--c-toggle-handle);
-      transition: left 0.3s;
-    }
   }
 
   &.themed {
