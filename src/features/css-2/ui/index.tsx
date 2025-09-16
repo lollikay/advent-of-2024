@@ -2,64 +2,47 @@
 import Html from '@kitajs/html';
 import '@shared/ui/container/style.scss';
 import '@shared/ui/margins/style.scss';
-import './style.scss';
+import { Toggle } from '../components/toggle/ui';
+import { LabelPosition } from '../components/toggle/model/label-position.model.ts';
+
+const toggles = [
+  { checked: true, disabled: false, label: '' },
+  { checked: false, disabled: false, label: 'Toggle the toggle!' },
+  { checked: true, disabled: true, label: 'Toggle the toggle!' },
+  { checked: false, disabled: true, label: '' },
+];
 
 export const CssChallenge02 = () => {
   return (
     <section class="container">
       <h1>CSS Challenge 02: toggle</h1>
+      <h2>Unstyled checkbox</h2>
+      <div class="mb-5">
+        <input type="checkbox" />
+      </div>
       <h2>Original challenge</h2>
-      <div class="mb-5">
-        <label class="toggle">
-          <input type="checkbox" class="toggle-checkbox" checked />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
-      <div class="mb-5">
-        <label class="toggle">
-          Toggle the toggle!
-          <input type="checkbox" class="toggle-checkbox" />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
-      <div class="mb-5">
-        <label class="toggle">
-          <input type="checkbox" class="toggle-checkbox" disabled />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
-      <div>
-        <label class="toggle">
-          <input type="checkbox" class="toggle-checkbox" checked disabled />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
+      {toggles.map(({ checked, disabled, label }, index) => (
+        <div class="mb-5">
+          <Toggle
+            checked={checked}
+            disabled={disabled}
+            label={label}
+            labelPosition={index % 2 === 0 ? LabelPosition.LEFT : LabelPosition.RIGHT}
+          />
+        </div>
+      ))}
       <h2>Themed toggle</h2>
-      <div class="mb-5">
-        <label class="toggle themed">
-          <input type="checkbox" class="toggle-checkbox" checked />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
-      <div class="mb-5">
-        <label class="toggle themed">
-          <input type="checkbox" class="toggle-checkbox" />
-          <span class="toggle-element"></span>
-          Toggle the toggle!
-        </label>
-      </div>
-      <div class="mb-5">
-        <label class="toggle themed">
-          <input type="checkbox" class="toggle-checkbox" disabled />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
-      <div>
-        <label class="toggle themed">
-          <input type="checkbox" class="toggle-checkbox" checked disabled />
-          <span class="toggle-element"></span>
-        </label>
-      </div>
+      {toggles.map(({ checked, disabled, label }, index) => (
+        <div class="mb-5">
+          <Toggle
+            checked={checked}
+            disabled={disabled}
+            label={label}
+            labelPosition={index % 2 === 0 ? LabelPosition.LEFT : LabelPosition.RIGHT}
+            className="themed"
+          />
+        </div>
+      ))}
     </section>
   )
 }

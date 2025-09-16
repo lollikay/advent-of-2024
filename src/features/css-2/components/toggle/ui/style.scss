@@ -25,9 +25,10 @@
       &::after {
         left: calc(var(--toggle-size) * 1.5);
         background-color: var(--c-active-toggle-handle);
-        mask: 
-          url('/assets/images/css-challenge-02/check.svg') 50% 50% / 50% no-repeat, 
-          linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
+        mask:
+          url('/assets/images/css-challenge-02/check.svg') 50% 50% / 50% no-repeat,
+          linear-gradient(#000 0 0);
+        /* we need this extra layer for mask-composite */
         mask-composite: exclude;
       }
     }
