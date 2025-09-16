@@ -1,0 +1,59 @@
+[data-tooltip] {
+  --arrow-size: 0.5rem;
+
+  position: relative;
+  text-decoration: underline dotted var(--c-accent-1);
+  text-underline-offset: 0.125rem;
+  cursor: help;
+
+  &::before,
+  &::after {
+    --scale: 0;
+
+    position: absolute;
+    bottom: 100%;
+    z-index: 10;
+    background-color: var(--c-base-dark);
+    color: var(--c-base-light);
+    transition: transform 0.2s;
+  }
+
+  &::before {
+    content: '';
+    left: 50%;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    transform: scale(var(--scale)) translate(-50%, calc(var(--arrow-size) / 2)) rotate(45deg);
+    transform-origin: center;
+  }
+
+  &::after {
+    content: attr(data-tooltip);
+    left: 50%;
+    width: max-content;
+    max-width: 40em;
+    padding: 0.25rem 0.5rem;
+    font-size: smaller;
+    border-radius: 0.25rem;
+    transform: scale(var(--scale)) translate(-50%, 0);
+    transform-origin: 0 100%;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      --scale: 1;
+    }
+  }
+}
+
+[data-tooltip-position='left'] {
+  &::before {
+    left: calc(var(--arrow-size) * 2);
+  }
+
+  &::after {
+    left: 0;
+    transform: scale(var(--scale)) translate(0, 0);
+  }
+}
