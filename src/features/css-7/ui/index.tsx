@@ -7,7 +7,7 @@ import { ControlsList } from '../components/controls-list/ui';
 export const CssChallenge07 = () => {
   return (
     <>
-      <section class="container css-challenge-06 mb-5">
+      <section class="container mb-5">
         <h1>CSS Challenge 07: input with floating label</h1>
         <h2>Original challenge</h2>
         <ControlsList />
