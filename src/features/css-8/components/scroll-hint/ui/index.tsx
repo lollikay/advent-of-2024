@@ -10,7 +10,7 @@ export const ScrollHint = () => {
         class={style.icon}
         alt=""
       />
-      <span class={style.text}>Scroll</span>
+      <span>Scroll</span>
       <img
         src="/assets/images/css-challenge-08/arrow-down.svg"
         class={style.icon}
