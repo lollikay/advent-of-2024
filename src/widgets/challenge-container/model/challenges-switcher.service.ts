@@ -6,6 +6,7 @@ import { CssChallenge05 } from "@features/css-5/ui";
 import { CssChallenge06 } from "@features/css-6/ui";
 import { CssChallenge07 } from "@features/css-7/ui";
 import { CssChallenge08 } from "@features/css-8/ui";
+import { CssChallenge09 } from "@features/css-9/ui";
 import { NoChallenge } from "@features/no-challenge/ui";
 
 export const challengeContainerId = 'challenge-container';
@@ -22,6 +23,7 @@ export class ChallengesSwitcherService {
     6: CssChallenge06,
     7: CssChallenge07,
     8: CssChallenge08,
+    9: CssChallenge09,
   };
 
   constructor() { }

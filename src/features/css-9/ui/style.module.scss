@@ -1,0 +1,49 @@
+.button {
+  position: relative;
+  margin: 0;
+  padding: 1.75em 3em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 0;
+  color: inherit;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.4em solid transparent;
+    border-radius: 5em;
+    background: linear-gradient(90deg, #F4BB44 2.14%, #E0367C 32.72%, #6762D2 69.42%, #6ED3FA 99.49%) no-repeat;
+    background-origin: border-box;
+    mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::before {
+      animation: border-glow 2s linear infinite;
+      animation-direction: reverse;
+    }
+  }
+}
+
+@keyframes border-glow {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 200% 100%;
+    background-position: 100% 0;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
