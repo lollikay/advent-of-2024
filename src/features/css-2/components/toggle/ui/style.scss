@@ -22,7 +22,7 @@
       border-color: var(--c-active-toggle-border);
 
       &::after {
-        left: calc(var(--toggle-size) * 1.5);
+        left: calc(100% - var(--toggle-size));
         background-color: var(--c-active-toggle-handle);
         mask:
           url('/assets/images/css-challenge-02/check.svg') 50% 50% / 50% no-repeat,
