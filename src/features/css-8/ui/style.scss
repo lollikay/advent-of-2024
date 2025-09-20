@@ -1,0 +1,48 @@
+.css-challenge-08 {
+  --c-accent-1: #FFFB00;
+
+  container-type: scroll-state;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--c-accent-1);
+  color: #000;
+
+  header {
+    position: sticky;
+    top: 0;
+    padding: 2.5rem 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+
+    @supports (container-type: scroll-state) {
+      @container scroll-state(scrollable: top) {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  main {
+    height: 300vh;
+  }
+
+  footer {
+    position: sticky;
+    bottom: 0;
+    padding: 1.5rem 0;
+    opacity: 1;
+    transition: opacity 0.3s;
+
+    @supports (container-type: scroll-state) {
+      @container scroll-state(scrollable: top) {
+        opacity: 0;
+      }
+    }
+  }
+}
