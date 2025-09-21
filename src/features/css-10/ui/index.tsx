@@ -18,7 +18,7 @@ const galleryItems = [
 
 export const CssChallenge10 = () => {
   return (
-    <section>
+    <section class="mb-5">
       <header class="container">
         <h1>CSS Challenge 10: horizontal slider</h1>
       </header>
