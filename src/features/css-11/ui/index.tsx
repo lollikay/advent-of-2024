@@ -10,7 +10,7 @@ export const CssChallenge11 = () => {
     <section class="container my-5">
       <div class={style.section}>
         <h1 class={style.sectionHeader}>
-          CSS Challenge 10:<br />
+          CSS Challenge 11:<br />
           vertical header
         </h1>
         <div class={style.sectionContent}>
