@@ -1,0 +1,25 @@
+.section {
+  display: flex;
+  gap: 3rem;
+  align-items: start;
+
+  &Header {
+    writing-mode: sideways-lr;
+    margin: 0;
+    font-size: 4em;
+    line-height: 1;
+    font-weight: 900;
+    text-align: right;
+
+    @supports (-webkit-text-stroke: 1px var(--c-accent-1)) {
+      -webkit-text-stroke: 1px var(--c-accent-1);
+      -webkit-text-fill-color: var(--c-base-light);
+
+      letter-spacing: 2px;
+    }
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
