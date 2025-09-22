@@ -3,6 +3,11 @@
 $spacing: 0.125rem;
 
 @for $i from 1 through 5 {
+  .my-#{$i} {
+    margin-top: $spacing * math.pow(2, ($i - 1));
+  }
+
+  .my-#{$i},
   .mb-#{$i} {
     margin-bottom: $spacing * math.pow(2, ($i - 1));
   }

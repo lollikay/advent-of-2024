@@ -11,7 +11,7 @@
     padding: 2rem 1rem;
     background-color: var(--c-base-dark);
     color: var(--c-base-light);
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 1rem));
     transition: transform 0.3s;
 
     @supports (container-type: scroll-state) {
