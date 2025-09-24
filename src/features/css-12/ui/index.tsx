@@ -41,7 +41,7 @@ const testies = [
 export const CssChallenge12 = () => {
   return (
     <div class="container">
-      <h2>Testimonials</h2>
+      <h2>CSS Challenge 12: Testimonials</h2>
       {layouts.map((layout, index) => (
         <div class={index % 2 === 1 ? style.invertedSection : ''}>
           <h3>Style {index + 1}</h3>

@@ -1,0 +1,71 @@
+.tabs {
+  --c-accent-tabs: #3F16D3;
+  --c-base-tabs: #FFEFE2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, min-content));
+}
+
+.themed {
+  --c-accent-tabs: var(--c-accent-1);
+  --c-base-tabs: var(--c-base-light);
+}
+
+.tab {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  line-height: 1;
+  background-color: transparent;
+  color: var(--c-accent-tabs);
+  border: 2px solid var(--c-accent-tabs);
+  border-left-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: var(--c-accent-tabs);
+    color: var(--c-base-tabs);
+  }
+
+  &:first-child {
+    border-left-width: 2px;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    clip-path: rect(0 0 0 0);
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:has(input:checked) {
+    background-color: var(--c-accent-tabs);
+    color: var(--c-base-tabs);
+    cursor: default;
+
+    & + .tabContent {
+      display: block;
+    }
+  }
+}
+
+.tabContent {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: none;
+  padding: 1.5rem 0;
+
+  h3 {
+    color: var(--c-accent-tabs);
+  }
+}
