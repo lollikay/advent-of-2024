@@ -1,6 +1,7 @@
 import { CssChallenge01 } from "@features/css-1/ui";
 import { CssChallenge10 } from "@features/css-10/ui";
 import { CssChallenge11 } from "@features/css-11/ui";
+import { CssChallenge12 } from "@features/css-12/ui";
 import { CssChallenge02 } from "@features/css-2/ui";
 import { CssChallenge03 } from "@features/css-3/ui";
 import { CssChallenge04 } from "@features/css-4/ui";
@@ -28,6 +29,7 @@ export class ChallengesSwitcherService {
     9: CssChallenge09,
     10: CssChallenge10,
     11: CssChallenge11,
+    12: CssChallenge12,
   };
 
   constructor() { }

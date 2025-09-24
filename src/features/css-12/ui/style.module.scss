@@ -1,0 +1,142 @@
+.invertedSection {
+  padding: 1rem;
+  background-color: var(--c-base-dark);
+  color: var(--c-base-light);
+
+  .testimonial {
+    &::before,
+    &::after {
+      opacity: 0.2;
+    }
+  }
+}
+
+.testimonials {
+  article {
+    --quote-size: 2.75rem;
+    --quote-left: 0.6;
+
+    max-width: 28rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.avatar {
+  --size: 4.5rem;
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.testimonial {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+  line-height: 1.5;
+
+  &::before {
+    content: url('assets/images/css-challenge-12/open-quotes.svg');
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    width: var(--quote-size);
+    transform: translate(calc(var(--quote-left) * -100%), -55%);
+  }
+}
+
+.cite {
+  font-size: 0.875rem;;
+}
+
+.straight,
+.zebra {
+  article {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr;
+  }
+
+  .cite {
+    grid-column: 2;
+    margin-top: -0.625rem;
+  }
+}
+
+.zebra {
+  article:nth-child(even) {
+    padding-left: calc(var(--quote-size) * var(--quote-left));
+
+    .avatar {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .testimonial,
+    .cite {
+      grid-column: 1;
+    }
+  }
+}
+
+.centered,
+.columns {
+  article {
+    padding-left: calc(var(--quote-size) * var(--quote-left));
+  }
+}
+
+.centered {
+  article {
+    padding-right: calc(var(--quote-size) * var(--quote-left));
+    text-align: center;
+  }
+
+  .avatar,
+  .testimonial {
+    margin: 0 auto 1rem;
+  }
+
+  .testimonial {
+    &::after {
+      content: url('assets/images/css-challenge-12/close-quotes.svg');
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      width: var(--quote-size);
+      transform: translate(calc(var(--quote-left) * 100%), 25%);
+    }
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+
+  article {
+    --quote-left: 0.5;
+  }
+
+  .avatar {
+    margin-bottom: 2rem;
+  }
+
+  .testimonial {
+    margin-bottom: 0.5rem;
+  }
+}
