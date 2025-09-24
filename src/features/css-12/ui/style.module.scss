@@ -50,7 +50,7 @@
   &::before {
     content: url('assets/images/css-challenge-12/open-quotes.svg');
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     z-index: -1;
     width: var(--quote-size);
@@ -59,7 +59,7 @@
 }
 
 .cite {
-  font-size: 0.875rem;;
+  font-size: 0.875rem;
 }
 
 .straight,
