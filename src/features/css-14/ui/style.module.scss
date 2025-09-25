@@ -1,0 +1,41 @@
+.ribbon {
+  --ribbon-offset: 5rem;
+
+  position: fixed;
+  top: 0;
+  right: var(--ribbon-offset);
+  z-index: 9999;
+  width: hypot(var(--ribbon-offset), var(--ribbon-offset));
+  padding: 0.25rem 0;
+  background-color: var(--c-accent-2);
+  transform-origin: 0 0;
+  transform: translate(100%, 0%) rotate(45deg);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: var(--c-accent-2);
+  }
+
+  &::before {
+    left: 50%;
+    transform: skew(45deg);
+  }
+
+  &::after {
+    right: 50%;
+    transform: skew(-45deg);
+  }
+}
+
+.text {
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+}
