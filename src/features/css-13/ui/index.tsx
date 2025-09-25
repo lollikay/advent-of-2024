@@ -2,7 +2,8 @@
 import Html from '@kitajs/html';
 import '@shared/ui/container/style.scss';
 import '@shared/ui/margins/style.scss';
-import style from './style.module.scss';
+import { Tabs } from '../components/tabs/ui';
+import { AltTabs } from '../components/alt-tabs/ui';
 
 const tabs = [
   {
@@ -48,55 +49,11 @@ export const CssChallenge13 = () => {
     <>
       <section class="container mb-5">
         <h2>CSS Challenge 13: 3-state toggle</h2>
-        <div class={style.tabs}>
-          {tabs.map((tab, index) => (
-            <>
-              <label class={style.tab}>
-                <input type="radio" name="switches" checked={index === 0} />
-                {tab.image}
-              </label>
-              <div class={style.tabContent}>
-                <h3>{tab.content}</h3>
-              </div>
-            </>
-          ))}
-        </div>
+        <Tabs tabs={tabs} />
       </section>
       <section class="container">
-        <h2>Themed tabs</h2>
-        <div class={`${style.tabs} ${style.themed}`}>
-          {themedTabs.map((tab, index) => (
-            <>
-              <label class={style.tab}>
-                <input type="radio" name="themed-switches" checked={index === 1} />
-                {tab.title}
-              </label>
-              <div class={style.tabContent}>
-                {index === 0 &&
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditate excepturi magni ullam ipsum ea odio, sed,
-                    labore nam omnis reprehenderit, totam repudiandae consectetur
-                    velit fugiat aliquid earum? Vel, nam. Corporis.
-                  </p>
-                }
-                {index % 3 === 1 &&
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Alias accusamus numquam incidunt nesciunt? Corporis, quisquam debitis
-                    facilis mollitia id laborum tempore magnam perferendis nulla!
-                    Aperiam quisquam amet laboriosam vero perferendis.
-                  </p>
-                }
-                <p>
-                  Saepe iure facere velit libero eum recusandae ut.
-                  Maxime quo similique asperiores, rem dolorem illum impedit quos laudantium?
-                  Quam placeat qui quo!
-                </p>
-              </div>
-            </>
-          ))}
-        </div>
+        <h2>Alternative tabs with varied tab switch width</h2>
+        <AltTabs tabs={themedTabs} />
       </section>
     </>
   )
