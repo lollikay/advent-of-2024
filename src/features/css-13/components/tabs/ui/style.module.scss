@@ -1,0 +1,108 @@
+.tabs {
+  --c-accent-tabs: #3F16D3;
+  --c-base-tabs: #FFEFE2;
+  --tab-icon-size: 1.5rem;
+  --tab-horizontal-padding: 1.5rem;
+  --tab-border-width: 2px;
+  --tab-hover-width: calc(var(--tab-icon-size) + var(--tab-horizontal-padding) * 2);
+}
+
+.tabsSwitches {
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  
+  &:hover {
+    .tabSwitchHover {
+      width: var(--tab-hover-width);
+    }
+  }
+}
+
+.tabSwitchInput {
+  display: none;
+
+  @for $i from 1 through 5 {
+    &:nth-of-type(#{$i}):checked {
+      & ~ .tabsSwitches .tabSwitchItem:nth-of-type(#{$i}) .tabSwitch {
+        background-color: var(--c-accent-tabs);
+        color: var(--c-base-tabs);
+      }
+
+      & ~ .tabsSwitches .tabSwitchHover {
+        left: calc((var(--tab-hover-width)) * (#{$i} - 1) + (var(--tab-border-width) * (#{$i})));
+        width: var(--tab-hover-width);
+      }
+
+      & ~ .tabPanel:nth-of-type(#{$i}) {
+        display: block;
+      }
+    }
+  }
+}
+
+.tabSwitchItem {
+  margin: 0;
+  padding: 0;
+  border: var(--tab-border-width) solid var(--c-accent-tabs);
+  border-left-width: 0;
+
+  &:first-of-type {
+    border-left-width: var(--tab-border-width);
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-of-type(#{$i}):hover ~ .tabSwitchHover {
+      left: calc((var(--tab-hover-width)) * (#{$i} - 1) + (var(--tab-border-width) * (#{$i}))) !important;
+    }
+  }
+}
+
+.tabSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.75rem var(--tab-horizontal-padding);
+  line-height: 1;
+  color: var(--c-accent-tabs);
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--c-base-tabs);
+  }
+
+  label {
+    display: block;
+  }
+
+  svg {
+    width: var(--tab-icon-size, 1.5rem);
+    height: var(--tab-icon-size, 1.5rem);
+  }
+
+  &Hover {
+    position: absolute;
+    top: 0;
+    left: var(--tab-border-width);
+    width: 0;
+    height: 100%;
+    background-color: var(--c-accent-tabs);
+    z-index: -1;
+    transition: left 0.5s, width 0.3s;
+  }
+}
+
+.tabPanel {
+  display: none;
+  padding: 1.5rem 0;
+
+  h3 {
+    color: var(--c-accent-tabs);
+  }
+}

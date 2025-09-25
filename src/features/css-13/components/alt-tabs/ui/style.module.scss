@@ -1,0 +1,56 @@
+.tabs {
+  --c-accent-tabs: var(--c-accent-1);
+  --c-base-tabs: var(--c-base-light);
+  --tab-border-width: 3px;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.tab {
+  position: relative;
+  padding: 0.75rem 1rem;
+  line-height: 1;
+  background-color: transparent;
+  color: var(--c-accent-tabs);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: var(--c-accent-tabs);
+    color: var(--c-base-tabs);
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    clip-path: rect(0 0 0 0);
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  &:has(input:checked) {
+    text-decoration: underline var(--c-accent-tabs) solid 3px;
+    text-underline-offset: 0.75rem; /* same as pb on .tab */
+    cursor: default;
+
+    & + .tabContent {
+      display: block;
+    }
+  }
+}
+
+.tabContent {
+  order: 10;
+  flex-basis: 100%;
+  display: none;
+  padding: 0 1rem;
+
+  h3 {
+    color: var(--c-accent-tabs);
+  }
+}
