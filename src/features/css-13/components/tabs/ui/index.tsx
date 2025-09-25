@@ -7,10 +7,12 @@ interface TabsProps {
     image: string;
     content: string;
   }[];
+  defaultTab?: number;
 }
 
 export const Tabs = ({
-  tabs
+  tabs,
+  defaultTab = 0,
 }: TabsProps) => {
   return (
     <div class={style.tabs}>
@@ -19,7 +21,7 @@ export const Tabs = ({
           type="radio"
           name="switches"
           class={style.tabSwitchInput}
-          checked={index === 0}
+          checked={index === defaultTab}
           id={`switch-${index}`}
         />
       ))}

@@ -6,17 +6,19 @@ interface AltTabsProps {
   tabs: {
     title: string;
   }[];
+  defaultTab?: number;
 }
 
 export const AltTabs = ({
-  tabs
+  tabs,
+  defaultTab = 1,
 }: AltTabsProps) => {
   return (
     <div class={style.tabs}>
       {tabs.map((tab, index) => (
         <>
           <label class={style.tab}>
-            <input type="radio" name="themed-switches" checked={index === 1} />
+            <input type="radio" name="themed-switches" checked={index === defaultTab} />
             {tab.title}
           </label>
           <div class={style.tabContent}>
