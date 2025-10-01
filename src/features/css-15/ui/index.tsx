@@ -11,7 +11,7 @@ export const CssChallenge15 = () => {
         <span>CSS Challenge 15: Candy cane jingle sleigh reindeer sparkle gingerbread.</span>
       </h1>
       <h1 class={`${style.highlighted} ${style.themed}`}>
-        <span>CSS Challenge 15: Candy cane jingle sleigh reindeer sparkle gingerbread.</span>
+        <span>Themed version: Candy cane jingle sleigh reindeer sparkle gingerbread.</span>
       </h1>
     </section>
   )
