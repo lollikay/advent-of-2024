@@ -13,10 +13,10 @@ export const CssChallenge14 = () => {
           Advent of CSS 2024
         </div>
       </div>
-      <div class="container">
-        <h2>CSS Challenge 14: Website ribbon</h2>
+      <section class="container">
+        <h1>CSS Challenge 15: Website ribbon</h1>
         <TextContent />
-      </div>
+      </section>
     </>
   )
 };
