@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
 import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
 import style from './style.module.scss';
 
 export const CssChallenge15 = () => {
