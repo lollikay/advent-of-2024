@@ -1,20 +1,23 @@
-import { CssChallenge01 } from "@features/css-1/ui";
-import { CssChallenge10 } from "@features/css-10/ui";
-import { CssChallenge11 } from "@features/css-11/ui";
-import { CssChallenge12 } from "@features/css-12/ui";
-import { CssChallenge13 } from "@features/css-13/ui";
-import { CssChallenge14 } from "@features/css-14/ui";
-import { CssChallenge15 } from "@features/css-15/ui";
-import { CssChallenge16 } from "@features/css-16/ui";
-import { CssChallenge02 } from "@features/css-2/ui";
-import { CssChallenge03 } from "@features/css-3/ui";
-import { CssChallenge04 } from "@features/css-4/ui";
-import { CssChallenge05 } from "@features/css-5/ui";
-import { CssChallenge06 } from "@features/css-6/ui";
-import { CssChallenge07 } from "@features/css-7/ui";
-import { CssChallenge08 } from "@features/css-8/ui";
-import { CssChallenge09 } from "@features/css-9/ui";
-import { NoChallenge } from "@features/no-challenge/ui";
+import {
+  CssChallenge01,
+  CssChallenge10,
+  CssChallenge11,
+  CssChallenge12,
+  CssChallenge13,
+  CssChallenge14,
+  CssChallenge15,
+  CssChallenge16,
+  CssChallenge17,
+  CssChallenge02,
+  CssChallenge03,
+  CssChallenge04,
+  CssChallenge05,
+  CssChallenge06,
+  CssChallenge07,
+  CssChallenge08,
+  CssChallenge09,
+  NoChallenge
+} from "@features/index";
 
 export const challengeContainerId = 'challenge-container';
 
@@ -38,6 +41,7 @@ export class ChallengesSwitcherService {
     14: CssChallenge14,
     15: CssChallenge15,
     16: CssChallenge16,
+    17: CssChallenge17,
   };
 
   constructor() { }
