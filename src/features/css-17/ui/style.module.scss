@@ -2,4 +2,118 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: url('assets/images/css-challenge-17/bg.jpg') no-repeat center / cover;
+
+  h1 {
+    font-size: 6rem;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: break-spaces;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 50rem;
+}
+
+.form {
+  --c-border-color: var(--c-base-dark);
+  --border-width: 14px;
+
+  position: relative;
+  margin-bottom: 1.5rem;
+  border: var(--border-width) solid var(--c-border-color);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 6rem;
+    height: 6.5rem;
+    top: calc(var(--border-width) * -2);
+    background-color: var(--c-accent-1);
+    mix-blend-mode: multiply;
+  }
+
+  &::before {
+    left: calc(var(--border-width) * -2);
+    clip-path: polygon(
+      0 0, 
+      100% 0, 
+      100% var(--border-width), 
+      var(--border-width) var(--border-width), 
+      var(--border-width) 100%,
+      0 100%
+    );
+  }
+
+  &::after {
+    right: calc(var(--border-width) * -2);
+    clip-path: polygon(
+      0 0, 
+      100% 0, 
+      100% 100%, 
+      calc(100% - var(--border-width)) 100%, 
+      calc(100% - var(--border-width)) var(--border-width), 
+      0 var(--border-width)
+    );
+  }
+
+  &Group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 8px solid var(--c-border-color);
+  }
+
+  &Label,
+  &Input,
+  &Button {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  &Label,
+  &Input {
+    padding: 2rem 4rem;
+  }
+
+  &Label,
+  &Button {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &Label {
+    text-align: right;
+    background-repeat: 6px solid var(--c-border-color);
+  }
+
+  &Input {
+    width: 100%;
+    background-color: transparent;
+    
+    &:focus {
+      outline-color: var(--c-accent-1);
+    }
+  }
+
+  &Button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--c-accent-1);
+    border: 0px;
+    color: var(--c-base-light);
+    transition: background-color 0.3s, color 0.3s;
+    mix-blend-mode: multiply;
+
+    &:hover {
+      background-color: var(--c-accent-2);
+      cursor: pointer;
+    }
+  }
 }

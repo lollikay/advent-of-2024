@@ -10,21 +10,33 @@ export const CssChallenge17 = () => {
       </h1>
       <section class={style.section}>
         <div class={style.container}>
-          <form style={style.form} action="">
+          <h1>
+            NEWSLETTER SIGNUP
+          </h1>
+          <form
+            class={style.form}
+            action=""
+            name="newsletter"
+            method="POST"
+          >
             <label class={style.formGroup}>
-              First name
-              <input class={style.input} type="text" name="firstName" />
+              <span class={style.formLabel}>First name</span>
+              <input class={style.formInput} type="text" name="firstName" />
             </label>
             <label class={style.formGroup}>
-              Last name
-              <input class={style.input} type="text" name="lastName" />
+              <span class={style.formLabel}>Last name</span>
+              <input class={style.formInput} type="text" name="lastName" />
             </label>
             <label class={style.formGroup}>
-              Email
-              <input class={style.input} type="email" name="email" />
+              <span class={style.formLabel}>Email</span>
+              <input class={style.formInput} type="email" name="email" />
             </label>
-            <button class={style.button} type="submit">Sign up</button>
           </form>
+          <button
+            form="newsletter"
+            class={style.formButton}
+            type="submit"
+          >Sign up</button>
         </div>
       </section>
     </>
