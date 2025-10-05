@@ -16,7 +16,7 @@ export const CssChallenge17 = () => {
           <form
             class={style.form}
             action=""
-            name="newsletter"
+            id="newsletter"
             method="POST"
           >
             <label class={style.formGroup}>
