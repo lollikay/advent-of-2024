@@ -1,0 +1,48 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+
+  &Image {
+    max-width: 100%;
+
+    &.skeleton {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  &Title {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
+  &Content {
+    grid-column: span 2;
+  }
+}
+
+.skeleton {
+  border-radius: 0.25rem;
+  background: 
+    #ccc
+    linear-gradient(
+      to right,
+    transparent 40%,
+    #eee,
+    transparent 60%
+  ) no-repeat 50% 0 / 200% 100%;
+  color: transparent;
+  pointer-events: none;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
