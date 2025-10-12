@@ -1,0 +1,48 @@
+.section {
+  position: relative;
+  padding-bottom: 67%;
+  background: url('assets/images/css-challenge-21/background.png') no-repeat 0 0 / 200% 100%;
+  transition: background-position 0.5s;
+
+  &:has(.themeSwitcher input:checked) {
+    background-position: 100% 0;
+  }
+}
+
+.themeSwitcher {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: flex;
+  align-items: center;
+  width: 7.5rem;
+  height: 3.5rem;
+  background-color: rgba(63, 17, 43, 1);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  input {
+    display: none;
+  }
+
+  &:has(input:checked) {
+    background-color: rgba(26, 22, 59, 1);
+  }
+}
+
+.switch {
+  position: relative;
+  left: 0.625rem;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(241, 113, 89, 1) url('assets/images/css-challenge-21/sun.svg') no-repeat center center / 2rem 2rem;
+  transition: left 0.3s, background 0.3s;
+
+  input:checked + & {
+    left: 4.375rem;
+    background: rgba(167, 194, 222, 1) url('assets/images/css-challenge-21/moon.svg') no-repeat center center / 2rem 2rem;
+  }
+}
