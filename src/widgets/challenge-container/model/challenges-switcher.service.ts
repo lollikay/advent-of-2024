@@ -1,4 +1,3 @@
-import { CssChallenge18 } from "@features/css-18/ui";
 import {
   CssChallenge01,
   CssChallenge10,
@@ -9,6 +8,8 @@ import {
   CssChallenge15,
   CssChallenge16,
   CssChallenge17,
+  CssChallenge18,
+  CssChallenge19,
   CssChallenge02,
   CssChallenge03,
   CssChallenge04,
@@ -44,6 +45,7 @@ export class ChallengesSwitcherService {
     16: CssChallenge16,
     17: CssChallenge17,
     18: CssChallenge18,
+    19: CssChallenge19,
   };
 
   constructor() { }

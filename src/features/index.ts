@@ -15,4 +15,6 @@ export { CssChallenge14 } from './css-14/ui/index';
 export { CssChallenge15 } from './css-15/ui/index';
 export { CssChallenge16 } from './css-16/ui/index';
 export { CssChallenge17 } from './css-17/ui/index';
+export { CssChallenge18 } from './css-18/ui/index';
+export { CssChallenge19 } from './css-19/ui/index';
 export { NoChallenge } from './no-challenge/ui/index';
