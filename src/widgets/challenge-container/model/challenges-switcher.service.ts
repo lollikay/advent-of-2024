@@ -18,7 +18,8 @@ import {
   CssChallenge07,
   CssChallenge08,
   CssChallenge09,
-  NoChallenge
+  NoChallenge,
+  CssChallenge20
 } from "@features/index";
 
 export const challengeContainerId = 'challenge-container';
@@ -46,6 +47,7 @@ export class ChallengesSwitcherService {
     17: CssChallenge17,
     18: CssChallenge18,
     19: CssChallenge19,
+    20: CssChallenge20,
   };
 
   constructor() { }

@@ -17,4 +17,5 @@ export { CssChallenge16 } from './css-16/ui/index';
 export { CssChallenge17 } from './css-17/ui/index';
 export { CssChallenge18 } from './css-18/ui/index';
 export { CssChallenge19 } from './css-19/ui/index';
+export { CssChallenge20 } from './css-20/ui/index';
 export { NoChallenge } from './no-challenge/ui/index';
