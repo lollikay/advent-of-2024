@@ -1,0 +1,110 @@
+.cssChallenge19 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1%;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 4fr 3fr 2fr;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.22;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  section {
+    @media (min-width: 576px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1%;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr;
+      align-content: start;
+    }
+
+    @media (min-width: 1280px) {
+      gap: 1rem;
+    }
+
+    &:first-child {
+      @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      article {
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+
+          @media (min-width: 576px) {
+            grid-column: span 2;
+          }
+
+          @media (min-width: 1280px) {
+            grid-column: span 3;
+          }
+
+          h1 {
+            font-size: 1.5rem;
+
+            @media (min-width: 576px) {
+              order: -1;
+              font-size: 2rem;
+            }
+
+            @media (min-width: 768px) and (max-width: 1023px) {
+              font-size: 2.5rem;
+            }
+
+            @media (min-width: 1280px) {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          @media (min-width: 576px) and (max-width: 1023px) {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      h1 {
+        @media (min-width: 1024px) {
+          font-size: 1.25rem;
+        }
+
+        @media (min-width: 1280px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      article {
+        &:first-child {
+          @media (min-width: 576px) and (max-width: 767px) {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+  }
+}
