@@ -13,7 +13,7 @@ export const CssChallenge14 = () => {
         </div>
       </div>
       <section class="container">
-        <h1>CSS Challenge 15: Website ribbon</h1>
+        <h1>CSS Challenge 14: Website ribbon</h1>
         <TextContent />
       </section>
     </>
