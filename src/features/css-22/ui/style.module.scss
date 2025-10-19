@@ -7,6 +7,13 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid rgba(214, 214, 214, 1);
+    border-radius: 0.75rem;
+  }
+
   ::marker {
     line-height: 1;
   }
@@ -24,6 +31,22 @@
     border-radius: 0.75rem;
     transition: border-color 0.3s;
 
+    @media (min-width: 1280px) {
+      border-radius: 0;
+      border-width: 1px;
+
+      &:first-child {
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+      }
+
+      &:last-child {
+        border-right-width: 0;
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+      }
+    }
+
     &::before {
       content: counter(products);
       display: flex;
@@ -39,22 +62,14 @@
       color: white;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: calc(var(--counter-height) + 1.5rem + 0.75rem); /* + li.pt + margin from counter */
-      left: 0.75rem;
-      width: 4.5rem;
-      height: 4.5rem;
-      background-color: #56C6FA;
-      background-image: url('assets/images/css-challenge-22/check--large.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 2.5rem 2.5rem;
-    }
-
     &:hover {
-      border-color: #EF7B69;
+      outline: 2px solid #EF7B69;
+      outline-offset: -2px;
+
+      @media (min-width: 1280px) {
+        z-index: 1;
+        outline-offset: -1px;
+      }
     }
   }
 
@@ -71,7 +86,7 @@
   h1 {
     flex: 1;
     margin: 0 auto 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -91,18 +106,45 @@
   }
 }
 
+.productImage {
+  position: relative;
+  background-color: #fff;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 1rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #56C6FA;
+    background-image: url('assets/images/css-challenge-22/check--large.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.5rem 2.5rem;
+  }
+}
+
 .productInfo {
   & > a {
     display: block;
     margin-bottom: 0.75rem;
     padding: 1rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     background-color: #EF7B69;
     border-radius: 0.75rem;
     color: #fff;
+
+    &:hover {
+      background-color: #d66a5b;
+    }
   }
 }
 

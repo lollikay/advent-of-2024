@@ -12,11 +12,13 @@ export const CssChallenge22 = () => {
       </h1>
       <ol class={style.products}>
         <li>
-          <img
-            src="assets/images/css-challenge-22/image-1.png"
-            srcset="assets/images/css-challenge-22/image-1@2x.png 2x, assets/images/css-challenge-22/image-1.png 1x"
-            alt="Made in Dutch Oven"
-          />
+          <div class={style.productImage}>
+            <img
+              src="assets/images/css-challenge-22/image-1.png"
+              srcset="assets/images/css-challenge-22/image-1@2x.png 2x, assets/images/css-challenge-22/image-1.png 1x"
+              alt="Made in Dutch Oven"
+            />
+          </div>
           <h1>Made in Dutch Oven</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Made In</a>
@@ -37,11 +39,13 @@ export const CssChallenge22 = () => {
         </li>
 
         <li>
-          <img
-            src="assets/images/css-challenge-22/image-2.png"
-            srcset="assets/images/css-challenge-22/image-2@2x.png 2x, assets/images/css-challenge-22/image-2.png 1x"
-            alt="Le Creuset Enameled Cast Iron Signature Round Dutch Oven, 5.5 qt., Marseille"
-          />
+          <div class={style.productImage}>
+            <img
+              src="assets/images/css-challenge-22/image-2.png"
+              srcset="assets/images/css-challenge-22/image-2@2x.png 2x, assets/images/css-challenge-22/image-2.png 1x"
+              alt="Le Creuset Enameled Cast Iron Signature Round Dutch Oven, 5.5 qt., Marseille"
+            />
+          </div>
           <h1>Le Creuset Enameled Cast Iron Signature Round Dutch Oven, 5.5 qt., Marseille</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
@@ -63,11 +67,13 @@ export const CssChallenge22 = () => {
         </li>
 
         <li>
-          <img
-            src="assets/images/css-challenge-22/image-3.png"
-            srcset="assets/images/css-challenge-22/image-3@2x.png 2x, assets/images/css-challenge-22/image-3.png 1x"
-            alt="Lodge Enameled Cast Iron 6-Quart Dutch Oven"
-          />
+          <div class={style.productImage}>
+            <img
+              src="assets/images/css-challenge-22/image-3.png"
+              srcset="assets/images/css-challenge-22/image-3@2x.png 2x, assets/images/css-challenge-22/image-3.png 1x"
+              alt="Lodge Enameled Cast Iron 6-Quart Dutch Oven"
+            />
+          </div>
           <h1>Lodge Enameled Cast Iron 6-Quart Dutch Oven</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
@@ -89,11 +95,13 @@ export const CssChallenge22 = () => {
         </li>
 
         <li>
-          <img
-            src="assets/images/css-challenge-22/image-4.png"
-            srcset="assets/images/css-challenge-22/image-4@2x.png 2x, assets/images/css-challenge-22/image-4.png 1x"
-            alt="HexClad 5-Quart Dutch Oven"
-          />
+          <div class={style.productImage}>
+            <img
+              src="assets/images/css-challenge-22/image-4.png"
+              srcset="assets/images/css-challenge-22/image-4@2x.png 2x, assets/images/css-challenge-22/image-4.png 1x"
+              alt="HexClad 5-Quart Dutch Oven"
+            />
+          </div>
           <h1>HexClad 5-Quart Dutch Oven</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
@@ -115,11 +123,13 @@ export const CssChallenge22 = () => {
         </li>
 
         <li>
-          <img
-            src="assets/images/css-challenge-22/image-5.png"
-            srcset="assets/images/css-challenge-22/image-5@2x.png 2x, assets/images/css-challenge-22/image-5.png 1x"
-            alt="Staub Cast Iron 5.5-Quart Round Cocotte"
-          />
+          <div class={style.productImage}>
+            <img
+              src="assets/images/css-challenge-22/image-5.png"
+              srcset="assets/images/css-challenge-22/image-5@2x.png 2x, assets/images/css-challenge-22/image-5.png 1x"
+              alt="Staub Cast Iron 5.5-Quart Round Cocotte"
+            />
+          </div>
           <h1>Staub Cast Iron 5.5-Quart Round Cocotte</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
