@@ -4,7 +4,7 @@ import { dayAttribute } from '../model/calendar.service';
 import './style.scss';
 import '@shared/ui/container/style.scss';
 
-const days = Array.from({ length: 31 }, (_, i) => i + 1);
+const days = Array.from({ length: 24 }, (_, i) => i + 1);
 const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 interface CalendarProps {
