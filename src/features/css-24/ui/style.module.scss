@@ -1,0 +1,67 @@
+.cards {
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0 0 5rem;
+  padding: 0;
+
+  &Item {
+    --rotation-angle: 0;
+    --top-offset: 0;
+
+    @supports (container-type: scroll-state) {
+      container-type: scroll-state;
+    }
+    position: sticky;
+    top: 0;
+    width: 28.75rem;
+
+    .card {
+      @supports (container-type: scroll-state) {
+        @container scroll-state(stuck: top) {
+          transform: translateY(var(--top-offset)) rotate(var(--rotation-angle));
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      --rotation-angle: 2.3deg;
+      --top-offset: 0rem;
+    }
+
+    &:nth-child(2) {
+      --rotation-angle: -2.67deg;
+      --top-offset: 1.5rem;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(2.5rem);
+    }
+  }
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  width: 28.75rem;
+  padding-bottom: 140%;
+  border: 1rem solid var(--c-base-light);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

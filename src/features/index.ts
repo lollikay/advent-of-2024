@@ -20,4 +20,6 @@ export { CssChallenge19 } from './css-19/ui/index';
 export { CssChallenge20 } from './css-20/ui/index';
 export { CssChallenge21 } from './css-21/ui/index';
 export { CssChallenge22 } from './css-22/ui/index';
+export { CssChallenge23 } from './css-23/ui/index';
+export { CssChallenge24 } from './css-24/ui/index';
 export { NoChallenge } from './no-challenge/ui/index';
