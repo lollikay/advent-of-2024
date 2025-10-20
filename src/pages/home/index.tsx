@@ -8,6 +8,7 @@ export const HomePage = () => {
   return (
     <Layout>
       <Calendar id='css-calendar' />
+      <Calendar id='js-calendar' title='JavaScript 2024' />
       <ChallengeContainer />
     </Layout>
   );

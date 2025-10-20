@@ -2,7 +2,7 @@
 import Html from '@kitajs/html';
 import '@shared/ui/container/style.scss';
 import '@shared/ui/margins/style.scss';
-import { Toggle } from '../components/toggle/ui';
+import { Toggle } from '../components/toggle/ui/index.tsx';
 import { LabelPosition } from '../components/toggle/model/label-position.model.ts';
 
 const toggles = [

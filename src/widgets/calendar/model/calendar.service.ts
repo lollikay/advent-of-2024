@@ -42,10 +42,11 @@ export class CalendarService {
       return;
     }
     const day = parseInt(dayValue);
-    if (!isNaN(day)) {
-      this.clearActiveClasses();
-      this.toggleDayClass(target);
-      this.callback?.(day);
+    if (isNaN(day)) {
+      return;
     }
+    this.clearActiveClasses();
+    this.toggleDayClass(target);
+    this.callback?.(day);
   }
 }

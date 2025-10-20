@@ -9,14 +9,16 @@ const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 interface CalendarProps {
   id: string;
+  title?: string;
 }
 
 export const Calendar = ({
-  id
+  id,
+  title = 'December 2024'
 }: CalendarProps) => {
   return (
     <section class="calendar container" id={id}>
-      <h1>December 2024</h1>
+      <h1>{title}</h1>
       <div class="calendar-grid">
         {daysOfWeek.map(day => (
           <div
