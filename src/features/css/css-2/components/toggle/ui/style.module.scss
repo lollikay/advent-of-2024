@@ -9,7 +9,7 @@
 
   margin: 0 -0.5rem;
 
-  &-checkbox {
+  &Checkbox {
     clip-path: inset(50%);
     height: 1px;
     overflow: hidden;
@@ -17,7 +17,7 @@
     white-space: nowrap;
     width: 1px;
 
-    &:checked + .toggle-element {
+    &:checked + .toggleElement {
       background-color: var(--c-active-toggle-bg);
       border-color: var(--c-active-toggle-border);
 
@@ -32,18 +32,18 @@
       }
     }
 
-    &:focus + .toggle-element {
+    &:focus + .toggleElement {
       outline: 2px dashed var(--c-active-toggle-bg);
       outline-offset: 2px;
     }
 
-    &:disabled + .toggle-element {
+    &:disabled + .toggleElement {
       opacity: 0.5;
       cursor: not-allowed;
     }
   }
 
-  &-element {
+  &Element {
     display: inline-block;
     width: calc(var(--toggle-size) * 2.5);
     padding: calc(var(--toggle-size) * 0.15);
@@ -66,14 +66,14 @@
       transition: left 0.3s, background-color 0.2s;
     }
   }
+}
 
-  &.themed {
-    --c-toggle-bg: transparent;
-    --c-toggle-handle: var(--c-base-dark);
-    --c-toggle-border: var(--c-base-dark);
-    --c-active-toggle-bg: var(--c-accent-1);
-    --c-active-toggle-handle: var(--c-base-light);
-    --c-active-toggle-border: var(--c-accent-1);
-    --toggle-size: 1.5rem;
-  }
+.themed {
+  --c-toggle-bg: transparent;
+  --c-toggle-handle: var(--c-base-dark);
+  --c-toggle-border: var(--c-base-dark);
+  --c-active-toggle-bg: var(--c-accent-1);
+  --c-active-toggle-handle: var(--c-base-light);
+  --c-active-toggle-border: var(--c-accent-1);
+  --toggle-size: 1.5rem;
 }

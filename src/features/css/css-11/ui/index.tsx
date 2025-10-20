@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 import { TextContent } from '@features/text-content/ui';
 
 export const CssChallenge11 = () => {
   return (
-    <section class="container my-5">
+    <section class={`${containerStyle.container} ${marginStyle.my5}`}>
       <div class={style.section}>
         <h1 class={style.sectionHeader}>
           CSS Challenge 11:<br />

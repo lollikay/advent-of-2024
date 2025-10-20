@@ -1,25 +1,25 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import './style.scss';
+import style from './style.module.scss';
 
 interface EmailControlProps {
-  className?: string;
+  className?: string[];
   value?: string;
 }
 
 export const EmailControl = ({
-  className = '',
+  className = [],
   value = '',
 }: EmailControlProps) => {
   return (
-    <label class={`form-control ${className}`}>
-      <span class="form-control__label">
+    <label class={`${style.formControl} ${className.map(c => style[c]).join(' ')}`}>
+      <span class={style.formControlLabel}>
         Email address
       </span>
       <input
         placeholder='some@mail.com'
         name="email-1"
-        class="form-control__input"
+        class={style.formControlInput}
         type="email"
         value={value}
         required

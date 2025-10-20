@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import './style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import './style.module.scss';
 
 export const CssChallenge03 = () => {
   return (
-    <section class="container">
+    <section class={containerStyle.container}>
       <h1>CSS Challenge 03: css only tooltip</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}

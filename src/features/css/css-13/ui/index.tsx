@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 import { Tabs } from '../components/tabs/ui';
 import { AltTabs } from '../components/alt-tabs/ui';
 
@@ -47,11 +47,11 @@ const themedTabs = [
 export const CssChallenge13 = () => {
   return (
     <>
-      <section class="container mb-5">
+      <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
         <h2>CSS Challenge 13: 3-state toggle</h2>
         <Tabs tabs={tabs} />
       </section>
-      <section class="container">
+      <section class={containerStyle.container}>
         <h2>Alternative tabs with varied tab switch width</h2>
         <AltTabs tabs={themedTabs} />
       </section>

@@ -1,4 +1,4 @@
-import { HomePage } from './pages/home/index.tsx';
+import { HomePage } from './pages/home/ui/index.tsx';
 import { ChallengesSwitcherService } from './widgets/challenge-container/model/challenges-switcher.service.ts';
 import { CalendarService, eventActiveDayClickByCalendar } from './widgets/calendar/model/calendar.service.ts';
 import {

@@ -1,17 +1,17 @@
 .calendar {
-  &-grid {
+  &Grid {
     display: grid;
     grid-template-columns: repeat(7, 2.5rem);
     gap: 0.25rem;
   }
 
-  &-day,
-  &-day-header {
+  &Day,
+  &DayHeader {
     font-weight: bold;
     text-align: center;
   }
 
-  &-day {
+  &Day {
     height: 2.5rem;
     background-color: transparent;
     border: 0;
@@ -33,7 +33,7 @@
       color: var(--c-base-light);
     }
 
-    &-header {
+    &Header {
       height: auto;
       font-size: 0.625rem;
       text-transform: uppercase;

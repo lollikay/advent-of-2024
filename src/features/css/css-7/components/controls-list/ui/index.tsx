@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
 import { EmailControl } from '../../email-control/ui';
-import '@shared/ui/margins/style.scss';
+import style from '@shared/ui/margins/style.module.scss';
 
 interface ControlsListProps {
   elementClass?: string;
@@ -20,10 +20,9 @@ export const ControlsList = ({
           isInvalid ? 'invalid' : '',
           elementClass
         ]
-          .filter(Boolean)
-          .join(' ');
+          .filter(Boolean);
         return (
-          <div class="mb-4">
+          <div class={style.mb4}>
             <EmailControl
               className={classes}
               value={

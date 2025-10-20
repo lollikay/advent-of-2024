@@ -1,4 +1,4 @@
-.photo-gallery-card {
+.photoGalleryCard {
   overflow: hidden;
   border-radius: 0.5rem;
 
@@ -9,7 +9,7 @@
     object-fit: cover;
   }
 
-  &.with-overflow {
+  &.withOverflow {
     position: relative;
 
     &::after {
@@ -27,5 +27,23 @@
       background-color: var(--c-overflow);
       color: var(--c-accent-light);
     }
+  }
+
+  &:nth-child(6n + 1),
+  &:nth-child(6n + 2),
+  &:nth-child(6n + 3):nth-last-child(2),
+  &:nth-child(6n + 4):last-child {
+    grid-column: span 3;
+  }
+
+  &:first-child:last-child,
+  &:nth-child(6n + 3):last-child {
+    grid-column: span 6;
+  }
+
+  &:nth-child(6n + 3),
+  &:nth-child(6n + 4),
+  &:nth-child(6n + 5) {
+    grid-column: span 2;
   }
 }

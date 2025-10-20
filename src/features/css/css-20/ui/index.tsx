@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
 import style from './style.module.scss';
 import { TextContent } from '@features/text-content/ui';
 
@@ -30,7 +30,7 @@ const nav = [
 export const CssChallenge20 = () => {
   return (
     <section class={style.section}>
-      <div class="container">
+      <div class={containerStyle.container}>
         <nav class={style.navbar}>
           <ul>
             {nav.map(item => (

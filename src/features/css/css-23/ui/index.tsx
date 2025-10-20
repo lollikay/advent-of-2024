@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
 import style from './style.module.scss';
 
 export const CssChallenge23 = () => {
   return (
-    <section class="container">
+    <section class={containerStyle.container}>
       <h1>CSS Challenge 23: Hamburger</h1>
       <nav class={style.menu}>
         <label class={style.toggle} aria-label="Toggle menu">

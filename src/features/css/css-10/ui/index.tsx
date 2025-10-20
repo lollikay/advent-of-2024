@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 
 const galleryItems = [
@@ -18,8 +18,8 @@ const galleryItems = [
 
 export const CssChallenge10 = () => {
   return (
-    <section class="mb-5">
-      <header class="container">
+    <section class={marginStyle.mb5}>
+      <header class={containerStyle.container}>
         <h1>CSS Challenge 10: horizontal slider</h1>
       </header>
       <div class={style.gallery}>

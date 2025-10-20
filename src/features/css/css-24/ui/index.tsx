@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
 import style from './style.module.scss';
 
 const cards = [
@@ -20,7 +20,7 @@ const cards = [
 
 export const CssChallenge24 = () => {
   return (
-    <section class={`container ${style.section}`}>
+    <section class={`${containerStyle.container} ${style.section}`}>
       <h1>CSS Challenge 24: Stacking on scroll cards</h1>
       <ul class={style.cards}>
         {cards.map((card) => (

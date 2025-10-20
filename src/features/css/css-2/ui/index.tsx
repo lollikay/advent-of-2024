@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 import { Toggle } from '../components/toggle/ui/index.tsx';
 import { LabelPosition } from '../components/toggle/model/label-position.model.ts';
 
@@ -14,15 +14,15 @@ const toggles = [
 
 export const CssChallenge02 = () => {
   return (
-    <section class="container">
+    <section class={containerStyle.container}>
       <h1>CSS Challenge 02: toggle</h1>
       <h2>Unstyled checkbox</h2>
-      <div class="mb-5">
+      <div class={marginStyle.mb5}>
         <input type="checkbox" />
       </div>
       <h2>Original challenge</h2>
       {toggles.map(({ checked, disabled, label }, index) => (
-        <div class="mb-5">
+        <div class={marginStyle.mb5}>
           <Toggle
             checked={checked}
             disabled={disabled}
@@ -33,7 +33,7 @@ export const CssChallenge02 = () => {
       ))}
       <h2>Themed toggle</h2>
       {toggles.map(({ checked, disabled, label }, index) => (
-        <div class="mb-5">
+        <div class={marginStyle.mb5}>
           <Toggle
             checked={checked}
             disabled={disabled}

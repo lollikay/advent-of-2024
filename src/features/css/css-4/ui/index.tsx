@@ -1,17 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
-import './style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
+import style from './style.module.scss';
 
 export const CssChallenge04 = () => {
   return (
     <>
-      <section class="container mb-5">
+      <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
         <h1>CSS Challenge 04: headings with decorative horizontal separators</h1>
       </section>
-      <div class="css-challenge-04 mb-5">
-        <section class="container mb-5">
+      <div class={`${style.cssChallenge04} ${containerStyle.mb5}`}>
+        <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
           <h1>Shorter heading</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
@@ -19,7 +19,7 @@ export const CssChallenge04 = () => {
             neque veniam quidem iste maxime consectetur qui alias deleniti illum.
           </p>
         </section>
-        <section class="container mb-5">
+        <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
           <h1 style="color: var(--c-accent-1);">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,{' '}
             architecto commodi modi facilis magni assumenda. Earum,{' '}
@@ -39,8 +39,8 @@ export const CssChallenge04 = () => {
           </p>
         </section>
       </div>
-      <div class="css-challenge-04 css-challenge-04--01">
-        <section class="container">
+      <div class={`${style.cssChallenge04} ${style.themed}`}>
+        <section class={containerStyle.container}>
           <h1>Some heading with colored lines</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}

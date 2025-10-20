@@ -1,8 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
 import { dayAttribute } from '../model/calendar.service';
-import './style.scss';
-import '@shared/ui/container/style.scss';
+import style from './style.module.scss';
 
 const days = Array.from({ length: 24 }, (_, i) => i + 1);
 const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -17,12 +16,12 @@ export const Calendar = ({
   title = 'December 2024'
 }: CalendarProps) => {
   return (
-    <section class="calendar container" id={id}>
+    <section class={style.calendar} id={id}>
       <h1>{title}</h1>
-      <div class="calendar-grid">
+      <div class={style.calendarGrid}>
         {daysOfWeek.map(day => (
           <div
-            class="calendar-day-header"
+            class={style.calendarDayHeader}
           >
             {day}
           </div>
@@ -32,7 +31,7 @@ export const Calendar = ({
           return (
             <button
               {...props}
-              class="calendar-day"
+              class={style.calendarDay}
               type="button"
             >
               {day}

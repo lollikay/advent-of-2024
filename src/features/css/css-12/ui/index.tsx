@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
-import '@shared/ui/margins/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 
 const layouts = [
@@ -40,12 +40,12 @@ const testies = [
 
 export const CssChallenge12 = () => {
   return (
-    <div class="container">
+    <div class={containerStyle.container}>
       <h2>CSS Challenge 12: Testimonials</h2>
       {layouts.map((layout, index) => (
         <div class={index % 2 === 1 ? style.invertedSection : ''}>
           <h3>Style {index + 1}</h3>
-          <section class="mb-5">
+          <section class={marginStyle.mb5}>
             <div class={`${style.testimonials} ${style[layout]}`}>
               {testies.map((testy) => (
                 <article>

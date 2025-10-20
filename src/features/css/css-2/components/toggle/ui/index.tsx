@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
 import { LabelPosition } from '../model/label-position.model.ts';
-import './style.scss';
+import style from './style.module.scss';
 
 interface ToggleProps {
   checked: boolean;
@@ -19,15 +19,15 @@ export const Toggle = ({
   className = '',
 }: ToggleProps) => {
   return (
-    <label class={`toggle ${className}`}>
+    <label class={`${style.toggle} ${style[className]}`}>
       {label && labelPosition === LabelPosition.LEFT && label}
       <input
         type="checkbox"
-        class="toggle-checkbox"
+        class={style.toggleCheckbox}
         checked={checked}
         disabled={disabled}
       />
-      <span class="toggle-element"></span>
+      <span class={style.toggleElement}></span>
       {label && labelPosition === LabelPosition.RIGHT && label}
     </label>
   );

@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import '@shared/ui/container/style.scss';
+import containerStyle from '@shared/ui/container/style.module.scss';
 import style from './style.module.scss';
 
 export const CssChallenge19 = () => {
   return (
-    <div class="container">
+    <div class={containerStyle.container}>
       <h1>CSS Challenge 19: news site layout</h1>
       <div class={style.cssChallenge19}>
         <section>
