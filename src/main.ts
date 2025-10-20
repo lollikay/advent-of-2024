@@ -1,6 +1,6 @@
 import { HomePage } from './pages/home/index.tsx';
 import { ChallengesSwitcherService } from './widgets/challenge-container/model/challenges-switcher.service.ts';
-import { CalendarService } from './widgets/calendar/model/calendar.service.ts';
+import { CalendarService, eventActiveDayClickByCalendar } from './widgets/calendar/model/calendar.service.ts';
 import {
   CssChallenge01,
   CssChallenge02,
@@ -72,5 +72,17 @@ const onJsDayClick = (day: number) => {
   challengesSwitcherService.renderChallenge(jsChallengeComponents[day]);
 };
 
-new CalendarService('css-calendar', onCssDayClick);
-new CalendarService('js-calendar', onJsDayClick);
+const calendars = [
+  new CalendarService('css-calendar', onCssDayClick),
+  new CalendarService('js-calendar', onJsDayClick),
+];
+
+document.addEventListener(eventActiveDayClickByCalendar, (event) => {
+  const { detail, target } = event as CustomEvent;
+  const activeInstance = detail.calendarInstance as CalendarService;
+  for (const calendar of calendars) {
+    if (calendar !== activeInstance) {
+      calendar.clearActiveClassesIfNotThisCalendar(target as HTMLElement);
+    }
+  }
+});
