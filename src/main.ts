@@ -70,6 +70,11 @@ const onCssDayClick = (day: number) => {
 
 const onJsDayClick = (day: number) => {
   challengesSwitcherService.renderChallenge(jsChallengeComponents[day]);
+  const fileNameDay = day < 10 ? `0${day}` : day;
+  import(`./features/js/js-${fileNameDay}/model/script.ts`)
+    .catch((error) => {
+      console.error(`No JS Challenge ${fileNameDay} script module:`, error);
+    });
 };
 
 const calendars = [
