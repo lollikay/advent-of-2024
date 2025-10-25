@@ -1,0 +1,22 @@
+.topEyeLine,
+.lash {
+  transform-origin: 50% 50%;
+  transition: transform 0.3s ease;
+}
+
+.bottomEyeLine,
+.pupil {
+  transition: opacity 0.3s ease;
+}
+
+.closed {
+  .bottomEyeLine,
+  .pupil {
+    opacity: 0;
+  }
+
+  .topEyeLine,
+  .lash {
+    transform: scaleY(-1);
+  }
+}
