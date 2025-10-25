@@ -1,0 +1,114 @@
+.inputGroup {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.25rem;
+  background: var(--c-accent-1);
+  background-size: 1rem 1rem;
+  color: var(--c-base-light);
+  border: none;
+  border-radius: 0.5rem;
+
+  &:focus-within {
+    outline: 1px dashed var(--c-base-dark);
+    outline-offset: 2px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--c-base-dark);
+    border-radius: 2rem;
+    transform: translate(0, -50%);
+    transition: width 0.5s, height 0.3s, right 0.3s, border-radius 0.3s;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0 0.25rem;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+  line-height: normal;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    opacity: 0.5;
+    color: var(--c-base-light);
+  }
+}
+
+.label,
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: color 0.3s;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.label {
+  transition-duration: 0.6s;
+}
+
+.verticalDivider {
+  align-self: center;
+  width: 2px;
+  height: 1.25rem;
+  background-color: currentColor;
+}
+
+.label,
+.iconButton {
+  width: 2rem;
+  height: 2rem;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.passwordRevealed {
+
+  &::before {
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .label,
+  .action {
+    color: var(--c-accent-1);
+  }
+}

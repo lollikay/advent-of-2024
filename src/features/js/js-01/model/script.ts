@@ -11,7 +11,7 @@ export const togglePassword = (event: Event) => {
     console.error('Input group not found');
     return;
   }
-  inputGroup.classList.toggle(style.passwordVisible);
+  inputGroup.classList.toggle(style.passwordRevealed);
   const input = inputGroup.querySelector('[data-js-input]');
   if (!(input instanceof HTMLInputElement)) {
     console.error('Input element not found or is not an input element');
@@ -28,6 +28,5 @@ export const togglePassword = (event: Event) => {
 
 const button = document.querySelector('#js-challenge-01 [data-js-action]');
 if (button) {
-  console.debug('Attaching toggle password event listener');
   button.addEventListener('click', togglePassword);
 }

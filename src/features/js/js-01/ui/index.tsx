@@ -19,10 +19,12 @@ export const JsChallenge01 = () => {
           <span class={style.label} title="Password">
             <LockIcon />
           </span>
+          <div class={style.verticalDivider}></div>
           <input
             type="password"
             class={style.input}
-            autocomplete='false'
+            autocomplete="off"
+            placeholder="password"
             data-js-input
           />
           <span class={style.action}>
