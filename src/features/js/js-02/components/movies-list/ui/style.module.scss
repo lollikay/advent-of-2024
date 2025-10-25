@@ -1,0 +1,27 @@
+.movies {
+  list-style: none;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 68rem;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 0.625rem;
+
+  @media (min-width: 1024px) {
+    max-height: 30rem;
+  }
+
+  &Item {
+    background-color: #f3f3f3;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #1AAAF2;
+      color: #fff;
+    }
+  }
+}

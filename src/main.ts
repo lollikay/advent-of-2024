@@ -26,7 +26,8 @@ import {
   CssChallenge22,
   CssChallenge23,
   CssChallenge24,
-  JsChallenge01
+  JsChallenge01,
+  JsChallenge02,
 } from '@features/index.ts';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = HomePage().toString();
@@ -60,6 +61,7 @@ const cssChallengeComponents: Record<number, () => JSX.Element> = {
 
 const jsChallengeComponents: Record<number, () => JSX.Element> = {
   1: JsChallenge01,
+  2: JsChallenge02,
 };
 
 const challengesSwitcherService = new ChallengesSwitcherService();
