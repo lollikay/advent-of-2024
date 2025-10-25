@@ -1,0 +1,75 @@
+.formControl {
+  --c-border: #CFCECE;
+  --c-focus-border: #0015FF;
+  --c-error: #DF0C0C;
+  --c-success: #18D651;
+  --c-text: #000;
+  --c-placeholder: #999;
+  --font-size: 1.5rem;
+
+  display: block;
+  position: relative;
+  padding: 2em 1.5em 1em;
+  font-size: var(--font-size);
+  line-height: 1;
+  border: 0.2em solid var(--c-border);
+  border-radius: 0.5em;
+  color: var(--c-text);
+  transition: border-color 0.3s;
+
+  &:focus-within,
+  &:has(.formControlInput:not(:placeholder-shown)) {
+    .formControlLabel {
+      top: 30%;
+      font-size: 0.6em;
+    }
+  }
+
+  &.valid {
+    border-color: var(--c-success);
+  }
+
+  &.invalid {
+    border-color: var(--c-error);
+  }
+
+  &:focus-within {
+    border-color: var(--c-focus-border);
+
+    .formControlInput::placeholder {
+      color: var(--c-placeholder);
+    }
+  }
+
+  &Label {
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    transform: translateY(-50%);
+    transition: font-size 0.3s, top 0.3s;
+  }
+
+  &Input {
+    width: 100%;
+    padding: 0;
+    font: inherit;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.themed {
+  --c-border: var(--c-accent-2);
+  --c-focus-border: var(--c-base-dark);
+  --c-text: var(--c-base-dark);
+  --font-size: 1rem;
+}

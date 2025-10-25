@@ -1,6 +1,7 @@
 export const calendarSelector = 'calendar';
 export const dayAttribute = 'data-calendar-day';
 export const selectedDayClass = 'selected';
+export const eventActiveDayClickByCalendar = 'calendar:active-day-click';
 
 export class CalendarService {
   private selector: string;
@@ -32,6 +33,15 @@ export class CalendarService {
     element.classList.toggle(selectedDayClass);
   }
 
+  private broadcastActiveDayClickByCalendar() {
+    if (!this.calendar) return;
+    const event = new CustomEvent(eventActiveDayClickByCalendar, {
+      bubbles: true,
+      detail: { calendarInstance: this },
+    });
+    this.calendar.dispatchEvent(event);
+  }
+
   private handleDayClick(event: Event) {
     const target = event.target as HTMLElement;
     if (!target.matches(`[${dayAttribute}]`)) {
@@ -42,10 +52,19 @@ export class CalendarService {
       return;
     }
     const day = parseInt(dayValue);
-    if (!isNaN(day)) {
+    if (isNaN(day)) {
+      return;
+    }
+    this.broadcastActiveDayClickByCalendar();
+    this.clearActiveClasses();
+    this.toggleDayClass(target);
+    this.callback?.(day);
+  }
+
+  clearActiveClassesIfNotThisCalendar(target: HTMLElement) {
+    if (!this.calendar) return;
+    if (target !== this.calendar) {
       this.clearActiveClasses();
-      this.toggleDayClass(target);
-      this.callback?.(day);
     }
   }
 }
