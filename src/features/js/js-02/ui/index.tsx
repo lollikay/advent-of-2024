@@ -4,6 +4,7 @@ import containerStyle from '@shared/ui/container/style.module.scss';
 import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 import { Movie, MoviesList } from '../components';
+import { TextContent } from '@features/text-content/ui';
 
 const movies = [
   {
@@ -51,39 +52,46 @@ export const JsChallenge02 = () => {
       class={containerStyle.container}
     >
       <h1>JS Challenge 02: Combobox</h1>
-      <div class={`${style.combobox} ${marginStyle.mb5}`}>
-        <div class={style.comboboxToggle}>
-          <label
+      <div
+        class={`${style.combobox} ${marginStyle.mb5}`}
+        data-js-combobox
+      >
+        <div
+          class={style.comboboxToggle}
+          data-js-combobox-toggle
+        >
+          <div
             class={style.comboboxInputGroup}
             data-js-combobox-input-group
           >
-            <span class={style.comboboxLabel}>
+            <label class={style.comboboxLabel}>
               Your Favorite Holiday Movie
-            </span>
+            </label>
             <input
               class={style.comboboxInput}
               type="search"
               data-js-combobox-input
             />
-          </label>
+          </div>
           <div
             class={style.comboboxSelectedMovie}
             data-js-combobox-selected-movie
           >
             <Movie
-              id={0}
-              cover={null}
-              title=""
-              year={0}
+              movie={null}
             />
           </div>
         </div>
-        <div class={style.comboboxContent}>
+        <div
+          class={style.comboboxContent}
+          data-js-combobox-content
+        >
           <MoviesList
             movies={movies}
           />
         </div>
       </div>
+      <TextContent />
     </section>
   );
 };

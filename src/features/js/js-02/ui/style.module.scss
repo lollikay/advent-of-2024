@@ -1,11 +1,8 @@
 .combobox {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  position: relative;
   padding-top: 1.5rem;
 
   @media (min-width: 1024px) {
-    gap: 2rem;
     padding-top: 3rem;
   }
 
@@ -76,7 +73,55 @@
   }
 
   &Content {
+    visibility: hidden;
+    overflow: auto;
+    position: absolute;
+    top: calc(100% + 1rem);
+    width: 100%;
+    max-height: 0;
     border: 1px solid #dadada;
     border-radius: 0.625rem;
+
+    @media (min-width: 1024px) {
+      top: calc(100% + 2rem);
+    }
+  }
+}
+
+.animatedClose {
+  animation: contentCloseAnimation 0.3s forwards;
+}
+
+.open {
+  .comboboxContent {
+    --max-height: 30rem;
+
+    visibility: visible;
+    animation: contentAnimation 0.5s forwards;
+
+    @media (min-width: 1024px) {
+      --max-height: 68rem;
+    }
+  }
+}
+
+@keyframes contentCloseAnimation {
+  0% {
+    visibility: visible;
+    max-height: var(--max-height, 30rem);
+  }
+  100% {
+    visibility: hidden;
+    max-height: 0;
+  }
+}
+
+@keyframes contentAnimation {
+  0% {
+    visibility: visible;
+    max-height: 0;
+  }
+  100% {
+    max-height: var(--max-height, 30rem);
   }
 }

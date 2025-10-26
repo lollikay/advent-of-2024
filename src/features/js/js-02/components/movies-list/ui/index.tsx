@@ -19,7 +19,7 @@ export const MoviesList = ({
           data-js-movie-item={JSON.stringify(movie)}
         >
           <Movie
-            {...movie}
+            movie={movie}
           />
         </li>
       ))}
