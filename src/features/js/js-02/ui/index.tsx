@@ -78,6 +78,13 @@ export const JsChallenge02 = () => {
               data-js-combobox-input
               placeholder="Your Favorite Holiday Movie"
             />
+            <button
+              class={style.comboboxButton}
+              type="button"
+              title="Toggle Combobox"
+              aria-label="Toggle Combobox"
+              data-js-combobox-button
+            ></button>
           </div>
           <div
             class={style.comboboxSelectedItem}

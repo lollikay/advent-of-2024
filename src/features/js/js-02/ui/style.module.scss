@@ -9,7 +9,7 @@
   &Toggle {
     position: relative;
     display: grid;
-    background: #f3f3f3 url('/assets/images/js-challenge-02/dropdown-arrow.svg') no-repeat right 1rem top 50% / auto 31%;
+    background: #f3f3f3;
     border: 1px solid #dadada;
     border-radius: 0.625rem;
 
@@ -85,6 +85,27 @@
     }
   }
 
+  &Button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: url('/assets/images/js-challenge-02/down.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transform-origin: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    @media (min-width: 1024px) {
+      right: 2.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
   &SelectedItem {
     display: none;
   }
@@ -96,6 +117,7 @@
     top: calc(100% + 1rem);
     width: 100%;
     max-height: 0;
+    background: #f3f3f3;
     border: 1px solid #dadada;
     border-radius: 0.625rem;
 
@@ -110,6 +132,10 @@
 }
 
 .open {
+  .comboboxButton {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+
   .comboboxContent {
     --max-height: 30rem;
 
@@ -148,7 +174,23 @@
     display: none;
   }
 
+  .comboboxButton {
+    background-image: url('/assets/images/js-challenge-02/close.svg');
+  }
+
   .comboboxSelectedItem {
     display: block;
+  }
+}
+
+.noResults {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: #848484;
+
+  @media (min-width: 1024px) {
+    padding: 2rem;
   }
 }

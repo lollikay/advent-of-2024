@@ -10,6 +10,7 @@ const elements = Object.freeze({
   toggle: '[data-js-combobox-toggle]',
   inputGroup: '[data-js-combobox-input-group]',
   input: '[data-js-combobox-input]',
+  button: '[data-js-combobox-button]',
   selected: '[data-js-combobox-selected-item]',
   content: '[data-js-combobox-content]',
   item: '[data-js-combobox-list-item]',
@@ -24,13 +25,15 @@ class Combobox<T extends ComboboxItem> {
   toggle: HTMLElement | null;
   inputGroup: HTMLElement | null;
   input: HTMLInputElement | null;
+  button: HTMLElement | null;
   selected: HTMLElement | null;
   content: HTMLElement | null;
 
   isOpen = false;
   selectedData: T | null = null;
 
-  boundClickOutside = this.onClickOutside.bind(this);
+  boundClickOutsideHandler = this.onClickOutside.bind(this);
+  boundClearButtonClickHandler = this.onClearButtonClick.bind(this);
 
   config: ComboboxConfig<T> = {
     items: [],
@@ -53,6 +56,7 @@ class Combobox<T extends ComboboxItem> {
     this.toggle = this.container.querySelector<HTMLElement>(elements.toggle);
     this.inputGroup = this.container.querySelector<HTMLElement>(elements.inputGroup);
     this.input = this.container.querySelector<HTMLInputElement>(elements.input);
+    this.button = this.container.querySelector<HTMLElement>(elements.button);
     this.selected = this.container.querySelector<HTMLElement>(elements.selected);
     this.content = this.container.querySelector<HTMLElement>(elements.content);
     this.listElement = list;
@@ -66,7 +70,6 @@ class Combobox<T extends ComboboxItem> {
     if (data) {
       try {
         this.config = JSON.parse(data) as ComboboxConfig<T>;
-        console.debug('Combobox: Configuration loaded.', this.config);
       } catch (error) {
         console.error('Combobox: Invalid JSON configuration.', error);
       }
@@ -79,13 +82,13 @@ class Combobox<T extends ComboboxItem> {
     if (this.selectedData === null) {
       this.input?.focus();
     }
-    document.addEventListener('click', this.boundClickOutside);
+    document.addEventListener('click', this.boundClickOutsideHandler);
   }
 
   private close() {
     this.isOpen = false;
     this.container.classList.remove(classes.open);
-    document.removeEventListener('click', this.boundClickOutside);
+    document.removeEventListener('click', this.boundClickOutsideHandler);
     this.content?.classList.add(style.animatedClose);
   }
 
@@ -97,6 +100,9 @@ class Combobox<T extends ComboboxItem> {
 
   private onToggle(e: Event) {
     const { target } = e;
+    if (this.selectedData) {
+      return;
+    }
     if (this.isOpen && this.input && target === this.input) {
       return;
     }
@@ -116,6 +122,7 @@ class Combobox<T extends ComboboxItem> {
   private clearSearch() {
     if (this.input) {
       this.input.value = '';
+      this.input.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }
 
@@ -127,6 +134,10 @@ class Combobox<T extends ComboboxItem> {
       );
       if (!this.content) {
         console.error('Combobox: Content element not found.');
+        return;
+      }
+      if (filteredItems.length === 0 && value.length) {
+        this.content.innerHTML = `<div class="${style.noResults}">No results found</div>`;
         return;
       }
       this.content.innerHTML = Html.createElement(
@@ -175,6 +186,14 @@ class Combobox<T extends ComboboxItem> {
     ).toString();
     this.clearSearch();
     this.close();
+    this.button?.addEventListener('click', this.boundClearButtonClickHandler);
+  }
+
+  private onClearButtonClick(e: Event) {
+    e.stopPropagation();
+    this.clearSelected();
+    this.open();
+    this.button?.removeEventListener('click', this.boundClearButtonClickHandler);
   }
 
   private init() {
