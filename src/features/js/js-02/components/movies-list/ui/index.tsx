@@ -1,27 +1,25 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Html from '@kitajs/html';
-import { Movie } from '../..';
 import style from './style.module.scss';
 import { type Movie as MovieType } from '../../../model';
+import { MoviesListItem } from '../../movies-list-item/ui';
 
 interface MoviesListProps {
-  movies: MovieType[];
+  items: MovieType[];
 }
 
 export const MoviesList = ({
-  movies,
+  items,
 }: MoviesListProps) => {
   return (
-    <ul class={style.movies}>
-      {movies.map((movie) => (
-        <li
-          class={style.moviesItem}
-          data-js-movie-item={JSON.stringify(movie)}
-        >
-          <Movie
-            movie={movie}
-          />
-        </li>
+    <ul
+      class={style.movies}
+      data-js-movies-list
+    >
+      {items.map((movie) => (
+        <MoviesListItem
+          movie={movie}
+        />
       ))}
     </ul>
   );

@@ -5,6 +5,7 @@ import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 import { Movie, MoviesList } from '../components';
 import { TextContent } from '@features/text-content/ui';
+import type { ComboboxConfig, Movie as MovieType } from '../model';
 
 const movies = [
   {
@@ -46,6 +47,10 @@ const movies = [
 ];
 
 export const JsChallenge02 = () => {
+  const config: ComboboxConfig<MovieType> = {
+    items: movies,
+  };
+
   return (
     <section
       id="js-challenge-02"
@@ -54,7 +59,7 @@ export const JsChallenge02 = () => {
       <h1>JS Challenge 02: Combobox</h1>
       <div
         class={`${style.combobox} ${marginStyle.mb5}`}
-        data-js-combobox
+        data-js-combobox={JSON.stringify(config)}
       >
         <div
           class={style.comboboxToggle}
@@ -71,6 +76,7 @@ export const JsChallenge02 = () => {
               class={style.comboboxInput}
               type="search"
               data-js-combobox-input
+              placeholder="Your Favorite Holiday Movie"
             />
           </div>
           <div
@@ -87,7 +93,7 @@ export const JsChallenge02 = () => {
           data-js-combobox-content
         >
           <MoviesList
-            movies={movies}
+            items={movies}
           />
         </div>
       </div>

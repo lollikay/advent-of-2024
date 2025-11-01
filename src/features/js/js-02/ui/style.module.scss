@@ -29,7 +29,8 @@
       padding: 1.5rem 10rem;
     }
 
-    &:focus-within {
+    &:focus-within,
+    &:has(.comboboxInput:not(:placeholder-shown)) {
       .comboboxLabel {
         bottom: 100%;
         transform: translateY(-50%);
@@ -65,6 +66,10 @@
     &:focus {
       outline: none;
       border-bottom-color: #000;
+    }
+
+    &::placeholder {
+      color: transparent;
     }
   }
 

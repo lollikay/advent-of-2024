@@ -7,15 +7,4 @@
   padding: 0;
   background-color: #fff;
   border-radius: 0.625rem;
-
-  &Item {
-    background-color: #f3f3f3;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-
-    &:hover {
-      background-color: #1AAAF2;
-      color: #fff;
-    }
-  }
 }
