@@ -1,0 +1,78 @@
+.movie {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto 1fr;
+  padding: 0.5rem;
+
+  @media (min-width: 1024px) {
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
+  &Cover {
+    position: relative;
+    width: 50px;
+    padding-bottom: 166%;
+    text-align: center;
+    background-color: #ddd;
+
+    @media (min-width: 1024px) {
+      width: 100px;
+    }
+
+    p,
+    img {
+      position: absolute;
+    }
+
+    img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    p {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      font-size: 0.625rem;
+      color: #999;
+
+      @media (min-width: 1024px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &Info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+
+  &Title,
+  &Year {
+    line-height: 1;
+  }
+
+  &Title {
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    @media (min-width: 1024px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &Year {
+    font-size: 1rem;
+
+    @media (min-width: 1024px) {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,196 @@
+.combobox {
+  position: relative;
+  padding-top: 1.5rem;
+
+  @media (min-width: 1024px) {
+    padding-top: 3rem;
+  }
+
+  &Toggle {
+    position: relative;
+    display: grid;
+    background: #f3f3f3;
+    border: 1px solid #dadada;
+    border-radius: 0.625rem;
+
+    @media (min-width: 1024px) {
+      background-position: right 4rem top 50%;
+    }
+  }
+
+  &InputGroup,
+  &SelectedItem {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &InputGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 6.1875rem;
+    padding: 1rem 3rem 1rem 1rem;
+
+    @media (min-width: 1024px) {
+      min-height: 12.375rem;
+      padding: 1.5rem 10rem;
+    }
+
+    &:focus-within,
+    &:has(.comboboxInput:not(:placeholder-shown)),
+    .open &,
+    .hasSelectedItem & {
+      .comboboxLabel {
+        bottom: 100%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &Label {
+    position: absolute;
+    bottom: 50%;
+    left: 1rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    transform: translateY(50%);
+    transition: bottom 0.3s, left 0.3s, transform 0.3s;
+
+    @media (min-width: 1024px) {
+      left: 10rem;
+      font-size: 2rem;
+    }
+  }
+
+  &Input {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #848484;
+
+    @media (min-width: 1024px) {
+      font-size: 2.5rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #000;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &Button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: url('/assets/images/js-challenge-02/down.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transform-origin: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    @media (min-width: 1024px) {
+      right: 2.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &SelectedItem {
+    display: none;
+  }
+
+  &Content {
+    visibility: hidden;
+    overflow: auto;
+    position: absolute;
+    top: calc(100% + 1rem);
+    width: 100%;
+    max-height: 0;
+    background: #f3f3f3;
+    border: 1px solid #dadada;
+    border-radius: 0.625rem;
+
+    @media (min-width: 1024px) {
+      top: calc(100% + 2rem);
+    }
+  }
+}
+
+.animatedClose {
+  animation: contentCloseAnimation 0.3s forwards;
+}
+
+.open {
+  .comboboxButton {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+
+  .comboboxContent {
+    --max-height: 30rem;
+
+    visibility: visible;
+    animation: contentAnimation 0.5s forwards;
+
+    @media (min-width: 1024px) {
+      --max-height: 68rem;
+    }
+  }
+}
+
+@keyframes contentCloseAnimation {
+  0% {
+    visibility: visible;
+    max-height: var(--max-height, 30rem);
+  }
+  100% {
+    visibility: hidden;
+    max-height: 0;
+  }
+}
+
+@keyframes contentAnimation {
+  0% {
+    visibility: visible;
+    max-height: 0;
+  }
+  100% {
+    max-height: var(--max-height, 30rem);
+  }
+}
+
+.hasSelectedItem {
+  .comboboxInput {
+    display: none;
+  }
+
+  .comboboxButton {
+    background-image: url('/assets/images/js-challenge-02/close.svg');
+  }
+
+  .comboboxSelectedItem {
+    display: block;
+  }
+}
+
+.noResults {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: #848484;
+
+  @media (min-width: 1024px) {
+    padding: 2rem;
+  }
+}

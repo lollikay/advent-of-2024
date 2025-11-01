@@ -1,0 +1,10 @@
+.movies {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 0.625rem;
+}
