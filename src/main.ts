@@ -29,6 +29,7 @@ import {
   JsChallenge01,
   JsChallenge02,
 } from '@features/index.ts';
+import { destroyEventName } from '@shared/model/index.ts';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = HomePage().toString();
 
@@ -71,6 +72,9 @@ const onCssDayClick = (day: number) => {
 };
 
 const onJsDayClick = (day: number) => {
+  const destroyPreviousScriptsEvent = new CustomEvent(destroyEventName);
+  document.dispatchEvent(destroyPreviousScriptsEvent);
+
   challengesSwitcherService.renderChallenge(jsChallengeComponents[day]);
   const fileNameDay = day < 10 ? `0${day}` : day;
   import(`./features/js/js-${fileNameDay}/model/script.ts`)

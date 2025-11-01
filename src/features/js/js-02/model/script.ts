@@ -9,7 +9,6 @@ const elements = Object.freeze({
   toggle: '[data-js-combobox-toggle]',
   inputGroup: '[data-js-combobox-input-group]',
   input: '[data-js-combobox-input]',
-  selectedMovie: '[data-js-combobox-selected-movie]',
   content: '[data-js-combobox-content]',
 });
 
@@ -22,7 +21,6 @@ class Combobox<T extends ComboboxItem> {
   toggle: HTMLElement | null;
   inputGroup: HTMLElement | null;
   input: HTMLInputElement | null;
-  selectedMovie: HTMLElement | null;
   content: HTMLElement | null;
 
   isOpen = false;
@@ -45,7 +43,6 @@ class Combobox<T extends ComboboxItem> {
     this.toggle = this.container.querySelector<HTMLElement>(elements.toggle);
     this.inputGroup = this.container.querySelector<HTMLElement>(elements.inputGroup);
     this.input = this.container.querySelector<HTMLInputElement>(elements.input);
-    this.selectedMovie = this.container.querySelector<HTMLElement>(elements.selectedMovie);
     this.content = this.container.querySelector<HTMLElement>(elements.content);
     this.listElement = listElement;
 
