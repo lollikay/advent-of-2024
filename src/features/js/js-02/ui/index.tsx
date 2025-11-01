@@ -3,7 +3,7 @@ import Html from '@kitajs/html';
 import containerStyle from '@shared/ui/container/style.module.scss';
 import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
-import { Movie, MoviesList } from '../components';
+import { MoviesList } from '../components';
 import { TextContent } from '@features/text-content/ui';
 import type { ComboboxConfig, Movie as MovieType } from '../model';
 
@@ -80,12 +80,9 @@ export const JsChallenge02 = () => {
             />
           </div>
           <div
-            class={style.comboboxSelectedMovie}
-            data-js-combobox-selected-movie
+            class={style.comboboxSelectedItem}
+            data-js-combobox-selected-item
           >
-            <Movie
-              movie={null}
-            />
           </div>
         </div>
         <div

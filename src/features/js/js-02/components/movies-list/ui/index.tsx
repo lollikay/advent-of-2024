@@ -14,7 +14,6 @@ export const MoviesList = ({
   return (
     <ul
       class={style.movies}
-      data-js-movies-list
     >
       {items.map((movie) => (
         <MoviesListItem

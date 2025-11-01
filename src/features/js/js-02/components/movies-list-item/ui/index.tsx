@@ -14,10 +14,10 @@ export const MoviesListItem = ({
   return (
     <li
       class={style.moviesItem}
-      data-js-movies-list-item={JSON.stringify(movie)}
+      data-js-combobox-list-item={JSON.stringify(movie)}
     >
       <Movie
-        movie={movie}
+        item={movie}
       />
     </li>
   );

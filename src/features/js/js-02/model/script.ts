@@ -2,14 +2,17 @@ import { debounce } from '@shared/model';
 import style from '../ui/style.module.scss';
 import type { ComboboxConfig, ComboboxItem } from './combobox.model';
 import { Html } from '@kitajs/html';
-import { MoviesList } from '../components';
+import { Movie, MoviesList } from '../components';
+import { getAttributeNameFromAttributeSelector } from '@shared/utils';
 
 const elements = Object.freeze({
   combobox: '[data-js-combobox]',
   toggle: '[data-js-combobox-toggle]',
   inputGroup: '[data-js-combobox-input-group]',
   input: '[data-js-combobox-input]',
+  selected: '[data-js-combobox-selected-item]',
   content: '[data-js-combobox-content]',
+  item: '[data-js-combobox-list-item]',
 });
 
 const classes = Object.freeze({
@@ -21,6 +24,7 @@ class Combobox<T extends ComboboxItem> {
   toggle: HTMLElement | null;
   inputGroup: HTMLElement | null;
   input: HTMLInputElement | null;
+  selected: HTMLElement | null;
   content: HTMLElement | null;
 
   isOpen = false;
@@ -34,23 +38,31 @@ class Combobox<T extends ComboboxItem> {
   items: T[] = [];
 
   listElement: ({ items }: { items: T[] }) => string | JSX.Element = () => '';
+  itemElement: ({ item }: { item: T }) => string | JSX.Element = () => '';
 
-  constructor(
+  constructor({
+    container,
+    list,
+    item
+  }: {
     container: HTMLElement,
-    listElement: ({ items }: { items: T[] }) => string | JSX.Element,
-  ) {
+    list: ({ items }: { items: T[] }) => string | JSX.Element,
+    item: ({ item }: { item: T }) => string | JSX.Element,
+  }) {
     this.container = container;
     this.toggle = this.container.querySelector<HTMLElement>(elements.toggle);
     this.inputGroup = this.container.querySelector<HTMLElement>(elements.inputGroup);
     this.input = this.container.querySelector<HTMLInputElement>(elements.input);
+    this.selected = this.container.querySelector<HTMLElement>(elements.selected);
     this.content = this.container.querySelector<HTMLElement>(elements.content);
-    this.listElement = listElement;
+    this.listElement = list;
+    this.itemElement = item;
 
     this.init();
   }
 
   private getConfig() {
-    const data = this.container.getAttribute('data-js-combobox');
+    const data = this.container.getAttribute(getAttributeNameFromAttributeSelector(elements.combobox));
     if (data) {
       try {
         this.config = JSON.parse(data) as ComboboxConfig<T>;
@@ -101,6 +113,12 @@ class Combobox<T extends ComboboxItem> {
     }
   }
 
+  private clearSearch() {
+    if (this.input) {
+      this.input.value = '';
+    }
+  }
+
   private onSearch(e: Event) {
     const { value } = e.target as HTMLInputElement;
     if (this.items.length > 0) {
@@ -118,6 +136,47 @@ class Combobox<T extends ComboboxItem> {
     }
   }
 
+  private clearSelected() {
+    this.selectedData = null;
+    if (this.selected) {
+      this.selected.innerHTML = '';
+    }
+    this.toggle?.classList.remove(style.hasSelectedItem);
+  }
+
+  private onSelectItem(e: Event) {
+    const { target } = e;
+    const itemElement = (target as HTMLElement).closest(elements.item) as HTMLElement;
+    if (!itemElement) {
+      return;
+    }
+    const itemDataAttr = itemElement.getAttribute(getAttributeNameFromAttributeSelector(elements.item));
+    if (!itemDataAttr) {
+      console.error('Combobox: Selected item data attribute not found.');
+      this.clearSelected();
+      return;
+    }
+    let itemData: T;
+    try {
+      itemData = JSON.parse(itemDataAttr) as T;
+    } catch (error) {
+      console.error('Combobox: Invalid JSON in selected item data attribute.', error);
+      this.clearSelected();
+      return;
+    }
+    this.selectedData = itemData;
+    if (!this.selected) {
+      return;
+    }
+    this.toggle?.classList.add(style.hasSelectedItem);
+    this.selected.innerHTML = Html.createElement(
+      this.itemElement,
+      { item: itemData },
+    ).toString();
+    this.clearSearch();
+    this.close();
+  }
+
   private init() {
     this.getConfig();
     this.getItems();
@@ -127,9 +186,14 @@ class Combobox<T extends ComboboxItem> {
       'input',
       debounce(this.onSearch.bind(this), this.config.debounceTime ?? 300)
     );
+    this.container.addEventListener('click', this.onSelectItem.bind(this));
   }
 }
 
 document.querySelectorAll<HTMLElement>(elements.combobox).forEach((comboboxElement) => {
-  new Combobox(comboboxElement, MoviesList);
+  new Combobox({
+    container: comboboxElement,
+    list: MoviesList,
+    item: Movie,
+  });
 });

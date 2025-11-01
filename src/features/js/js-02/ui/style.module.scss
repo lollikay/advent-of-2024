@@ -7,6 +7,8 @@
   }
 
   &Toggle {
+    position: relative;
+    display: grid;
     background: #f3f3f3 url('/assets/images/js-challenge-02/dropdown-arrow.svg') no-repeat right 1rem top 50% / auto 31%;
     border: 1px solid #dadada;
     border-radius: 0.625rem;
@@ -16,8 +18,13 @@
     }
   }
 
+  &InputGroup,
+  &SelectedItem {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
   &InputGroup {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,14 +32,17 @@
     padding: 1rem 3rem 1rem 1rem;
 
     @media (min-width: 1024px) {
-      min-height: 10.375rem;
+      min-height: 12.375rem;
       padding: 1.5rem 10rem;
     }
 
     &:focus-within,
-    &:has(.comboboxInput:not(:placeholder-shown)) {
+    &:has(.comboboxInput:not(:placeholder-shown)),
+    .open &,
+    .hasSelectedItem & {
       .comboboxLabel {
         bottom: 100%;
+        left: 0;
         transform: translateY(-50%);
       }
     }
@@ -41,12 +51,14 @@
   &Label {
     position: absolute;
     bottom: 50%;
+    left: 1rem;
     font-size: 0.875rem;
     line-height: 1;
     transform: translateY(50%);
-    transition: bottom 0.3s, transform 0.3s;
+    transition: bottom 0.3s, left 0.3s, transform 0.3s;
 
     @media (min-width: 1024px) {
+      left: 10rem;
       font-size: 2rem;
     }
   }
@@ -73,7 +85,7 @@
     }
   }
 
-  &SelectedMovie {
+  &SelectedItem {
     display: none;
   }
 
@@ -128,5 +140,15 @@
   }
   100% {
     max-height: var(--max-height, 30rem);
+  }
+}
+
+.hasSelectedItem {
+  .comboboxInput {
+    display: none;
+  }
+
+  .comboboxSelectedItem {
+    display: block;
   }
 }

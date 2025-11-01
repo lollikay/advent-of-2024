@@ -4,14 +4,14 @@ import style from './style.module.scss';
 import type { Movie as MovieType } from '@features/js/js-02/model';
 
 interface MovieProps {
-  movie: MovieType | null;
+  item: MovieType | null;
 }
 
 export const Movie = ({
-  movie
+  item: movie
 }: MovieProps) => {
   if (!movie) {
-    return null;
+    return '';
   }
 
   const { title, year, cover } = movie;
@@ -22,7 +22,6 @@ export const Movie = ({
           <img
             src={cover}
             alt={title}
-            data-js-movie-cover
           /> :
           <p>No Cover Available</p>
         }
@@ -30,13 +29,11 @@ export const Movie = ({
       <div class={style.movieInfo}>
         <div
           class={style.movieTitle}
-          data-js-movie-title
         >
           {title}
         </div>
         <div
           class={style.movieYear}
-          data-js-movie-year
         >
           {year}
         </div>
