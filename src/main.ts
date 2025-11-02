@@ -29,6 +29,7 @@ import {
   JsChallenge01,
   JsChallenge02,
   JsChallenge03,
+  JsChallenge04,
 } from '@features/index.ts';
 import { destroyChallengeEventName } from '@shared/model/index.ts';
 
@@ -65,6 +66,7 @@ const jsChallengeComponents: Record<number, () => JSX.Element> = {
   1: JsChallenge01,
   2: JsChallenge02,
   3: JsChallenge03,
+  4: JsChallenge04,
 };
 
 const challengesSwitcherService = new ChallengesSwitcherService();
