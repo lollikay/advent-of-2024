@@ -7,8 +7,8 @@ import { EyeIcon, LockIcon } from '../components';
 export const JsChallenge01 = () => {
   return (
     <section
-      id="js-challenge-01"
       class={containerStyle.container}
+      data-js-challenge="01"
     >
       <h1>JS Challenge 01: Password input</h1>
       <form>

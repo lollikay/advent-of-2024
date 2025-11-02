@@ -28,8 +28,9 @@ import {
   CssChallenge24,
   JsChallenge01,
   JsChallenge02,
+  JsChallenge03,
 } from '@features/index.ts';
-import { destroyEventName } from '@shared/model/index.ts';
+import { destroyChallengeEventName } from '@shared/model/index.ts';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = HomePage().toString();
 
@@ -63,6 +64,7 @@ const cssChallengeComponents: Record<number, () => JSX.Element> = {
 const jsChallengeComponents: Record<number, () => JSX.Element> = {
   1: JsChallenge01,
   2: JsChallenge02,
+  3: JsChallenge03,
 };
 
 const challengesSwitcherService = new ChallengesSwitcherService();
@@ -71,13 +73,21 @@ const onCssDayClick = (day: number) => {
   challengesSwitcherService.renderChallenge(cssChallengeComponents[day]);
 };
 
+const destroyPreviousScriptsEvent = new CustomEvent(destroyChallengeEventName);
+
 const onJsDayClick = (day: number) => {
-  const destroyPreviousScriptsEvent = new CustomEvent(destroyEventName);
   document.dispatchEvent(destroyPreviousScriptsEvent);
 
   challengesSwitcherService.renderChallenge(jsChallengeComponents[day]);
   const fileNameDay = day < 10 ? `0${day}` : day;
   import(`./features/js/js-${fileNameDay}/model/script.ts`)
+    .then((module) => {
+      if (module && typeof module.init === 'function') {
+        module.init();
+        return;
+      }
+      console.error(`JS Challenge ${fileNameDay} script module does not have an init function`);
+    })
     .catch((error) => {
       console.error(`No JS Challenge ${fileNameDay} script module:`, error);
     });

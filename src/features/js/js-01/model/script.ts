@@ -1,6 +1,7 @@
 import style from '../ui/style.module.scss';
 import eyeIconStyle from '../components/eye-icon/ui/style.module.scss';
-import { destroyEventName } from '@shared/model';
+import { destroyChallengeEventName } from '@shared/model';
+import { jsChallengeAttribute } from '@shared/model/constants';
 
 const selectors = Object.freeze({
   actionButton: '[data-js-action]',
@@ -9,7 +10,9 @@ const selectors = Object.freeze({
   iconEye: '[data-js-icon="eye"]',
 });
 
-export const togglePassword = (event: Event) => {
+const entrySelector = `[${jsChallengeAttribute}="01"] ${selectors.actionButton}`;
+
+const togglePassword = (event: Event) => {
   const button = event.currentTarget;
   if(!(button instanceof HTMLButtonElement)) {
     console.error('Event target is not a button element');
@@ -41,15 +44,15 @@ export const togglePassword = (event: Event) => {
   eyeIcon.classList.toggle(eyeIconStyle.closed);
 };
 
-const button = document.querySelector(`#js-challenge-01 ${selectors.actionButton}`);
-if (button) {
-  button.addEventListener('click', togglePassword);
-}
+export const init = () => {
+  const button = document.querySelector(entrySelector);
+  if (button) {
+    button.addEventListener('click', togglePassword);
+  }
+};
 
-/**
- * Cleanup event listener when a new JS challenge is loaded
- */
-document.addEventListener(destroyEventName, () => {
+document.addEventListener(destroyChallengeEventName, () => {
+  const button = document.querySelector(entrySelector);
   if (button) {
     button.removeEventListener('click', togglePassword);
   }
