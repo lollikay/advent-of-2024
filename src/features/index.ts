@@ -25,3 +25,4 @@ export { CssChallenge24 } from './css/css-24/ui/index';
 export { NoChallenge } from './no-challenge/ui/index';
 export { JsChallenge01 } from './js/js-01/ui/index';
 export { JsChallenge02 } from './js/js-02/ui/index';
+export { JsChallenge03 } from './js/js-03/ui/index';

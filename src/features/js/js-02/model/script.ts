@@ -56,7 +56,7 @@ class Combobox<T extends ComboboxItem> {
     this.toggle = this.container.querySelector<HTMLElement>(elements.toggle);
     this.inputGroup = this.container.querySelector<HTMLElement>(elements.inputGroup);
     this.input = this.container.querySelector<HTMLInputElement>(elements.input);
-    this.button = this.container.querySelector<HTMLElement>(elements.button);
+    this.button = this.container.querySelector<HTMLButtonElement>(elements.button);
     this.selected = this.container.querySelector<HTMLElement>(elements.selected);
     this.content = this.container.querySelector<HTMLElement>(elements.content);
     this.listElement = list;
@@ -157,7 +157,10 @@ class Combobox<T extends ComboboxItem> {
 
   private onSelectItem(e: Event) {
     const { target } = e;
-    const itemElement = (target as HTMLElement).closest(elements.item) as HTMLElement;
+    if(!target) {
+      return;
+    }
+    const itemElement = (target as HTMLElement).closest(elements.item);
     if (!itemElement) {
       return;
     }
@@ -169,7 +172,7 @@ class Combobox<T extends ComboboxItem> {
     }
     let itemData: T;
     try {
-      itemData = JSON.parse(itemDataAttr) as T;
+      itemData = JSON.parse(itemDataAttr);
     } catch (error) {
       console.error('Combobox: Invalid JSON in selected item data attribute.', error);
       this.clearSelected();

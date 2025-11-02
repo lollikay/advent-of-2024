@@ -1,0 +1,23 @@
+.textarea {
+  overflow: hidden;
+  width: 100%;
+  max-width: 20em;
+  resize: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem;
+  background: var(--c-accent-2);
+  border: 1px solid var(--c-base-dark);
+  border-radius: 0.5rem;
+  color: inherit;
+
+  &::placeholder {
+    color: var(--c-base-dark);
+    opacity: 0.5;
+  }
+
+  &:focus {
+    outline: 2px dashed var(--c-accent-2);
+    outline-offset: 2px;
+  }
+}
