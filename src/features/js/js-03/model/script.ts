@@ -24,8 +24,9 @@ class ResizableTextarea {
   }
 }
 
-document.querySelectorAll<HTMLTextAreaElement>(`#js-challenge-03 ${selector}`)
-  .forEach(element => {
-    console.debug('Initializing ResizableTextarea for', element);
-    new ResizableTextarea(element)
-  });
+export const init = () => {
+  document.querySelectorAll<HTMLTextAreaElement>(selector)
+    .forEach(element => {
+      new ResizableTextarea(element)
+    });
+};

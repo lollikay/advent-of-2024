@@ -153,6 +153,7 @@
     visibility: visible;
     max-height: var(--max-height, 30rem);
   }
+
   100% {
     visibility: hidden;
     max-height: 0;
@@ -164,6 +165,7 @@
     visibility: visible;
     max-height: 0;
   }
+
   100% {
     max-height: var(--max-height, 30rem);
   }
