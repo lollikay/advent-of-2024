@@ -1,15 +1,13 @@
 const selector = '[data-js-textarea]';
 
 class ResizableTextarea {
-  element: HTMLTextAreaElement;
-
-  constructor(element: HTMLTextAreaElement) {
-    this.element = element;
-
+  constructor(
+    private element: HTMLTextAreaElement
+  ) {
     this.init();
   }
 
-  adjustHeight() {
+  private adjustHeight() {
     this.element.style.height = 'auto';
     this.element.style.height = `${this.element.scrollHeight}px`;
   }

@@ -5,12 +5,12 @@ import style from './style.module.scss';
 
 export const JsChallenge04 = () => {
   return (
-    <section
-      class={containerStyle.container}
-      data-js-challenge="03"
-    >
+    <section class={containerStyle.container}>
       <h1>JS Challenge 04: Resizeable panels</h1>
-      <div class={style.verticalGrid}>
+      <div
+        class={style.verticalGrid}
+        data-js-challenge="04"
+      >
         <div
           class={style.topPanel}
           data-js-panel="top"

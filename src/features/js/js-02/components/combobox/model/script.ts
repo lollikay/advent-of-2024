@@ -7,7 +7,6 @@ import { getAttributeNameFromAttributeSelector } from '@shared/utils';
 export const selectors = Object.freeze({
   combobox: '[data-js-combobox]',
   toggle: '[data-js-combobox-toggle]',
-  inputGroup: '[data-js-combobox-input-group]',
   input: '[data-js-combobox-input]',
   button: '[data-js-combobox-button]',
   selected: '[data-js-combobox-selected-item]',
@@ -20,27 +19,26 @@ const classes = Object.freeze({
 });
 
 export class Combobox<T extends ComboboxItem> {
-  container: HTMLElement;
-  toggle: HTMLElement | null;
-  inputGroup: HTMLElement | null;
-  input: HTMLInputElement | null;
-  button: HTMLElement | null;
-  selected: HTMLElement | null;
-  content: HTMLElement | null;
+  private container: HTMLElement;
+  private toggle: HTMLElement | null;
+  private input: HTMLInputElement | null;
+  private button: HTMLElement | null;
+  private selected: HTMLElement | null;
+  private content: HTMLElement | null;
 
-  isOpen = false;
-  selectedData: T | null = null;
+  private isOpen = false;
+  private selectedData: T | null = null;
 
-  boundClickOutsideHandler = this.onClickOutside.bind(this);
-  boundClearButtonClickHandler = this.onClearButtonClick.bind(this);
+  private boundClickOutsideHandler = this.onClickOutside.bind(this);
+  private boundClearButtonClickHandler = this.onClearButtonClick.bind(this);
 
-  config: ComboboxConfig<T> = {
+  private config: ComboboxConfig<T> = {
     items: [],
   };
-  items: T[] = [];
+  private items: T[] = [];
 
-  listElement: ({ items }: { items: T[] }) => string | JSX.Element = () => '';
-  itemElement: ({ item }: { item: T }) => string | JSX.Element = () => '';
+  private listElement: ({ items }: { items: T[] }) => string | JSX.Element = () => '';
+  private itemElement: ({ item }: { item: T }) => string | JSX.Element = () => '';
 
   constructor({
     container,
@@ -53,7 +51,6 @@ export class Combobox<T extends ComboboxItem> {
   }) {
     this.container = container;
     this.toggle = this.container.querySelector<HTMLElement>(selectors.toggle);
-    this.inputGroup = this.container.querySelector<HTMLElement>(selectors.inputGroup);
     this.input = this.container.querySelector<HTMLInputElement>(selectors.input);
     this.button = this.container.querySelector<HTMLButtonElement>(selectors.button);
     this.selected = this.container.querySelector<HTMLElement>(selectors.selected);
