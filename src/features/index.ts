@@ -28,3 +28,4 @@ export { JsChallenge02 } from './js/js-02/ui/index';
 export { JsChallenge03 } from './js/js-03/ui/index';
 export { JsChallenge04 } from './js/js-04/ui/index';
 export { JsChallenge05 } from './js/js-05/ui/index';
+export { JsChallenge06 } from './js/js-06/ui/index';

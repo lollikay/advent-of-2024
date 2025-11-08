@@ -1,0 +1,67 @@
+.formGroup {
+  position: relative;
+  display: block;
+  max-width: 30em;
+  margin-bottom: 2rem;
+
+  &.empty {
+    animation: shake 0.3s ease-in-out;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+
+  &:focus {
+    outline: 2px dashed var(--c-accent-1);
+    outline-offset: 2px;
+  }
+
+  &::placeholder {
+    color: var(--c-base-dark);
+    opacity: 0.75;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--c-accent-1);
+  }
+
+  &.copied {
+    pointer-events: none;
+    color: transparent;
+    background: url("assets/images/js-challenge-06/check.svg") no-repeat center / 2em auto;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
