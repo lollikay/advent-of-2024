@@ -15,6 +15,7 @@ export const JsChallenge05 = () => {
           name="someText"
           data-js-character-counter
           class={style.textarea}
+          placeholder='Type something...'
         ></textarea>
         <div class={style.count}>
           Characters: <span data-js-character-count>0</span>

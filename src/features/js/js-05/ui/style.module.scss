@@ -15,6 +15,11 @@
     outline: 2px dashed var(--c-base-dark);
     outline-offset: 2px;
   }
+
+  &::placeholder {
+    color: var(--c-base-dark);
+    opacity: 0.75;
+  }
 }
 
 .count {

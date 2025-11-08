@@ -1,3 +1,4 @@
+import { slugify } from "./slugify";
 
 const selectors = Object.freeze({
   container: "[data-js-slug]",
@@ -24,9 +25,7 @@ class SlugGenerator {
     if (value === '') {
       this.outputEl.innerHTML = '';
     }
-    const transformedValue = value
-      .toLocaleLowerCase()
-      .replace(/\s/g, '-');
+    const transformedValue = slugify(value);
     this.outputEl.innerHTML = '/' + transformedValue;
   }
 
