@@ -1,14 +1,17 @@
+import { TagContents } from '../components';
 import style from '../ui/style.module.scss';
+import { Html } from '@kitajs/html';
 
 const selectors = Object.freeze({
   container: '[data-js-input-tags]',
   input: '[data-js-input]',
+  tag: '[data-js-input-tag]',
 });
 
 class TagsInput {
   private inputEl: HTMLDivElement | null = null;
 
-  constructor(container: Element) {
+  constructor(private container: Element) {
     this.inputEl = container.querySelector<HTMLDivElement>(selectors.input);
 
     this.init();
@@ -17,13 +20,15 @@ class TagsInput {
   private inputToTag(input: string): void {
     if (!this.inputEl) return;
 
-    const tag = document.createElement('button');
-    tag.textContent = input;
+    const tag = document.createElement('span');
+    tag.innerHTML = Html.createElement(TagContents, {
+      text: input,
+    }).toString();
     tag.contentEditable = 'false';
     tag.className = style.tag;
+    tag.dataset.jsInputTag = '';
 
     this.inputEl.appendChild(tag);
-    this.inputEl.appendChild(document.createTextNode(' '));
   }
 
   private processInitialInput() {
@@ -42,8 +47,14 @@ class TagsInput {
     });
   }
 
-  private onInput(e: Event) {
-    console.debug('Input event:', e);
+  private onInput(e: Event) {}
+
+  private onTagClick(e: Event) {
+    const target = e.target as HTMLElement;
+    const tag = target.closest(selectors.tag);
+    if (tag && this.inputEl) {
+      this.inputEl.removeChild(tag);
+    }
   }
 
   private init() {
@@ -51,6 +62,7 @@ class TagsInput {
       this.inputEl.addEventListener('input', this.onInput.bind(this));
       this.processInitialInput();
     }
+    this.container.addEventListener('click', this.onTagClick.bind(this));
   }
 }
 

@@ -11,7 +11,9 @@ export const JsChallenge08 = () => {
         <label class={style.label} for="tags">
           Tags
         </label>
-        <div class={style.input} contenteditable="true" id="tags" data-js-input></div>
+        <div class={style.input} contenteditable="true" id="tags" data-js-input>
+          Elves, Santa, presents
+        </div>
       </div>
     </section>
   );
