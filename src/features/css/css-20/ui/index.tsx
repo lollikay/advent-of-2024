@@ -33,18 +33,14 @@ export const CssChallenge20 = () => {
       <div class={containerStyle.container}>
         <nav class={style.navbar}>
           <ul>
-            {nav.map(item => (
+            {nav.map((item) => (
               <li>
-                <a href={item.href}>
-                  {item.title}
-                </a>
+                <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
         </nav>
-        <h1>
-          CSS Challenge 20: sticky navigation with a frosted glass effect.
-        </h1>
+        <h1>CSS Challenge 20: sticky navigation with a frosted glass effect.</h1>
         <TextContent />
       </div>
     </section>

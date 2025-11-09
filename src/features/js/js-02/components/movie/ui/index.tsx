@@ -7,9 +7,7 @@ interface MovieProps {
   item: MovieType | null;
 }
 
-export const Movie = ({
-  item: movie
-}: MovieProps) => {
+export const Movie = ({ item: movie }: MovieProps) => {
   if (!movie) {
     return '';
   }
@@ -18,26 +16,12 @@ export const Movie = ({
   return (
     <div class={style.movie}>
       <div class={`${style.movieCover} ${!cover ? style.empty : ''}`}>
-        {cover ?
-          <img
-            src={cover}
-            alt={title}
-          /> :
-          <p>No Cover Available</p>
-        }
+        {cover ? <img src={cover} alt={title} /> : <p>No Cover Available</p>}
       </div>
       <div class={style.movieInfo}>
-        <div
-          class={style.movieTitle}
-        >
-          {title}
-        </div>
-        <div
-          class={style.movieYear}
-        >
-          {year}
-        </div>
+        <div class={style.movieTitle}>{title}</div>
+        <div class={style.movieYear}>{year}</div>
       </div>
     </div>
   );
-}
+};

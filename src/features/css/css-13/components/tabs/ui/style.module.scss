@@ -1,6 +1,6 @@
 .tabs {
-  --c-accent-tabs: #3F16D3;
-  --c-base-tabs: #FFEFE2;
+  --c-accent-tabs: #3f16d3;
+  --c-base-tabs: #ffefe2;
   --tab-icon-size: 1.5rem;
   --tab-horizontal-padding: 1.5rem;
   --tab-border-width: 2px;
@@ -15,7 +15,7 @@
   width: fit-content;
   margin: 0;
   padding: 0;
-  
+
   &:hover {
     .tabSwitchHover {
       width: var(--tab-hover-width);
@@ -57,7 +57,9 @@
 
   @for $i from 1 through 5 {
     &:nth-of-type(#{$i}):hover ~ .tabSwitchHover {
-      left: calc((var(--tab-hover-width)) * (#{$i} - 1) + (var(--tab-border-width) * (#{$i}))) !important;
+      left: calc(
+        (var(--tab-hover-width)) * (#{$i} - 1) + (var(--tab-border-width) * (#{$i}))
+      ) !important;
     }
   }
 }
@@ -94,7 +96,9 @@
     height: 100%;
     background-color: var(--c-accent-tabs);
     z-index: -1;
-    transition: left 0.5s, width 0.3s;
+    transition:
+      left 0.5s,
+      width 0.3s;
   }
 }
 

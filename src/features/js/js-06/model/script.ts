@@ -3,14 +3,14 @@ import style from '../ui/style.module.scss';
 const COPIED_STATE_DURATION_MS = 5000;
 
 const selectors = Object.freeze({
-  container: "[data-js-copy-to-clipboard]",
-  input: "[data-js-input]",
-  button: "[data-js-button]",
+  container: '[data-js-copy-to-clipboard]',
+  input: '[data-js-input]',
+  button: '[data-js-button]',
 });
 
 const buttonTooltips = Object.freeze({
-  copy: "Copy",
-  copied: "Copied!",
+  copy: 'Copy',
+  copied: 'Copied!',
 });
 
 class CopyToClipboardFromInput {
@@ -18,9 +18,7 @@ class CopyToClipboardFromInput {
   private button: HTMLButtonElement | null;
   private isCopying: boolean = false;
 
-  constructor(
-    private container: HTMLElement
-  ) {
+  constructor(private container: HTMLElement) {
     this.input = this.container.querySelector<HTMLInputElement>(selectors.input);
     this.button = this.container.querySelector<HTMLButtonElement>(selectors.button);
 
@@ -33,14 +31,14 @@ class CopyToClipboardFromInput {
       await navigator.clipboard.writeText(text);
       this.updateButton();
     } catch (error) {
-      console.error("Failed to copy text to clipboard:", error);
+      console.error('Failed to copy text to clipboard:', error);
       this.isCopying = false;
     }
   }
 
   private updateButtonTooltip(text: string) {
     if (this.button) {
-      this.button.setAttribute("data-tooltip", text);
+      this.button.setAttribute('data-tooltip', text);
     }
   }
 
@@ -51,7 +49,7 @@ class CopyToClipboardFromInput {
     }
     this.button.classList.add(style.copied);
     this.updateButtonTooltip(buttonTooltips.copied);
-    
+
     setTimeout(() => {
       this.button?.classList.remove(style.copied);
       this.updateButtonTooltip(buttonTooltips.copy);
@@ -61,9 +59,13 @@ class CopyToClipboardFromInput {
 
   private playEmptyAnimation() {
     this.container.classList.add(style.empty);
-    this.container.addEventListener("animationend", () => {
-      this.container.classList.remove(style.empty);
-    }, { once: true });
+    this.container.addEventListener(
+      'animationend',
+      () => {
+        this.container.classList.remove(style.empty);
+      },
+      { once: true }
+    );
   }
 
   private async onCopyButtonClick() {
@@ -72,7 +74,7 @@ class CopyToClipboardFromInput {
     }
     if (this.input) {
       const text = this.input.value;
-      if (text === "") {
+      if (text === '') {
         this.playEmptyAnimation();
         return;
       }
@@ -81,7 +83,7 @@ class CopyToClipboardFromInput {
   }
 
   private init() {
-    this.button?.addEventListener("click", this.onCopyButtonClick.bind(this));
+    this.button?.addEventListener('click', this.onCopyButtonClick.bind(this));
   }
 }
 

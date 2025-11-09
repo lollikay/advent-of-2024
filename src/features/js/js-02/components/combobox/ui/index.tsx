@@ -13,24 +13,13 @@ export interface ComboboxProps<T extends ComboboxItem> {
 export function Combobox<T extends ComboboxItem>({
   config,
   label = 'Select an option',
-  children
+  children,
 }: ComboboxProps<T>) {
   return (
-    <div
-      class={`${style.combobox} ${marginStyle.mb5}`}
-      data-js-combobox={JSON.stringify(config)}
-    >
-      <div
-        class={style.comboboxToggle}
-        data-js-combobox-toggle
-      >
-        <div
-          class={style.comboboxInputGroup}
-          data-js-combobox-input-group
-        >
-          <label class={style.comboboxLabel}>
-            {label}
-          </label>
+    <div class={`${style.combobox} ${marginStyle.mb5}`} data-js-combobox={JSON.stringify(config)}>
+      <div class={style.comboboxToggle} data-js-combobox-toggle>
+        <div class={style.comboboxInputGroup} data-js-combobox-input-group>
+          <label class={style.comboboxLabel}>{label}</label>
           <input
             class={style.comboboxInput}
             type="search"
@@ -45,16 +34,9 @@ export function Combobox<T extends ComboboxItem>({
             data-js-combobox-button
           ></button>
         </div>
-        <div
-          class={style.comboboxSelectedItem}
-          data-js-combobox-selected-item
-        >
-        </div>
+        <div class={style.comboboxSelectedItem} data-js-combobox-selected-item></div>
       </div>
-      <div
-        class={style.comboboxContent}
-        data-js-combobox-content
-      >
+      <div class={style.comboboxContent} data-js-combobox-content>
         {children}
       </div>
     </div>

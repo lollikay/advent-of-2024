@@ -7,17 +7,12 @@ interface EmailControlProps {
   value?: string;
 }
 
-export const EmailControl = ({
-  className = [],
-  value = '',
-}: EmailControlProps) => {
+export const EmailControl = ({ className = [], value = '' }: EmailControlProps) => {
   return (
-    <label class={`${style.formControl} ${className.map(c => style[c]).join(' ')}`}>
-      <span class={style.formControlLabel}>
-        Email address
-      </span>
+    <label class={`${style.formControl} ${className.map((c) => style[c]).join(' ')}`}>
+      <span class={style.formControlLabel}>Email address</span>
       <input
-        placeholder='some@mail.com'
+        placeholder="some@mail.com"
         name="email-1"
         class={style.formControlInput}
         type="email"

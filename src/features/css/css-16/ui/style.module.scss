@@ -1,7 +1,7 @@
 .pageContents {
   height: 75vh;
   overflow: auto;
-  
+
   &::-webkit-scrollbar {
     width: 4rem;
 
@@ -15,7 +15,8 @@
     }
 
     &-thumb {
-      background: var(--c-accent-1) url('assets/images/css-challenge-16/pattern.svg') top left repeat;
+      background: var(--c-accent-1) url('assets/images/css-challenge-16/pattern.svg') top left
+        repeat;
       border: 0.25rem solid var(--c-base-dark);
     }
   }

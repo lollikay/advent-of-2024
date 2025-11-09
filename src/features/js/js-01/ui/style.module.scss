@@ -27,7 +27,11 @@
     background-color: var(--c-base-dark);
     border-radius: 2rem;
     transform: translate(0, -50%);
-    transition: width 0.5s, height 0.3s, right 0.3s, border-radius 0.3s;
+    transition:
+      width 0.5s,
+      height 0.3s,
+      right 0.3s,
+      border-radius 0.3s;
   }
 
   > * {
@@ -99,7 +103,6 @@
 }
 
 .passwordRevealed {
-
   &::before {
     right: 0;
     width: 100%;

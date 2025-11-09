@@ -16,5 +16,5 @@ export const CssChallenge16 = () => {
         </section>
       </div>
     </>
-  )
+  );
 };

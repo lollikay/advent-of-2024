@@ -11,25 +11,25 @@ const movies = [
     id: 1,
     title: "It's a Wonderful Life",
     year: 1946,
-    cover: "/assets/images/js-challenge-02/its-a-wonderful-life.png"
+    cover: '/assets/images/js-challenge-02/its-a-wonderful-life.png',
   },
   {
     id: 2,
-    title: "A Christmas Carol",
+    title: 'A Christmas Carol',
     year: 1951,
-    cover: "/assets/images/js-challenge-02/christmas-carol.png"
+    cover: '/assets/images/js-challenge-02/christmas-carol.png',
   },
   {
     id: 3,
-    title: "Home Alone",
+    title: 'Home Alone',
     year: 1990,
-    cover: "/assets/images/js-challenge-02/home-alone.png"
+    cover: '/assets/images/js-challenge-02/home-alone.png',
   },
   {
     id: 4,
-    title: "Rudolph the Red-Nosed Reindeer",
+    title: 'Rudolph the Red-Nosed Reindeer',
     year: 1964,
-    cover: "/assets/images/js-challenge-02/rudolph-the-red-nosed-reindeer.png"
+    cover: '/assets/images/js-challenge-02/rudolph-the-red-nosed-reindeer.png',
   },
   {
     id: 5,
@@ -39,10 +39,10 @@ const movies = [
   },
   {
     id: 6,
-    title: "Die Hard",
+    title: 'Die Hard',
     year: 1988,
-    cover: "/assets/images/js-challenge-02/die-hard.png",
-  }
+    cover: '/assets/images/js-challenge-02/die-hard.png',
+  },
 ];
 
 export const JsChallenge02 = () => {
@@ -51,15 +51,9 @@ export const JsChallenge02 = () => {
   };
 
   return (
-    <section
-      class={containerStyle.container}
-      data-js-challenge="02"
-    >
+    <section class={containerStyle.container} data-js-challenge="02">
       <h1>JS Challenge 02: Combobox</h1>
-      <Combobox
-        config={config}
-        label="Your favorite Christmas movie"
-      >
+      <Combobox config={config} label="Your favorite Christmas movie">
         <MoviesList items={movies} />
       </Combobox>
       <TextContent />

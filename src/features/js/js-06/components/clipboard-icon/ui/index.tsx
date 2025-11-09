@@ -1,9 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Html from "@kitajs/html";
+import Html from '@kitajs/html';
 
 export const ClipboardIcon = () => {
   return (
-    <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"

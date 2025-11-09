@@ -1,4 +1,7 @@
-export const debounce = <T extends unknown[]>(callback: (...args: T) => void, wait: number = 300) => {
+export const debounce = <T extends unknown[]>(
+  callback: (...args: T) => void,
+  wait: number = 300
+) => {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
   return (...args: T) => {
     if (timeoutId) {
@@ -8,4 +11,4 @@ export const debounce = <T extends unknown[]>(callback: (...args: T) => void, wa
       callback(...args);
     }, wait);
   };
-}
+};

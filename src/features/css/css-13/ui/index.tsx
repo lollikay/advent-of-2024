@@ -56,5 +56,5 @@ export const CssChallenge13 = () => {
         <AltTabs tabs={themedTabs} />
       </section>
     </>
-  )
+  );
 };

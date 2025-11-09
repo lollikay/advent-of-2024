@@ -7,18 +7,16 @@ export const Navigation = () => {
     <nav class={style.navigation}>
       <ul>
         <li>
-          <a
-            href="https://www.adventofcss.com/"
-            target="_blank"
-          >Advent of CSS</a>
+          <a href="https://www.adventofcss.com/" target="_blank">
+            Advent of CSS
+          </a>
         </li>
         <li>
-          <a
-            href="https://www.adventofjs.com/"
-            target="_blank"
-          >Advent of JS</a>
+          <a href="https://www.adventofjs.com/" target="_blank">
+            Advent of JS
+          </a>
         </li>
       </ul>
     </nav>
-  )
+  );
 };

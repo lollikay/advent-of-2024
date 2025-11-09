@@ -10,13 +10,10 @@ interface TabsProps {
   defaultTab?: number;
 }
 
-export const Tabs = ({
-  tabs,
-  defaultTab = 0,
-}: TabsProps) => {
+export const Tabs = ({ tabs, defaultTab = 0 }: TabsProps) => {
   return (
     <div class={style.tabs}>
-      {tabs.map(( _ , index) => (
+      {tabs.map((_, index) => (
         <input
           type="radio"
           name="switches"
@@ -28,10 +25,7 @@ export const Tabs = ({
       <ul class={style.tabsSwitches}>
         {tabs.map((tab, index) => (
           <li class={style.tabSwitchItem}>
-            <label
-              for={`switch-${index}`}
-              class={style.tabSwitch} 
-            >
+            <label for={`switch-${index}`} class={style.tabSwitch}>
               {tab.image}
             </label>
           </li>
@@ -44,5 +38,5 @@ export const Tabs = ({
         </div>
       ))}
     </div>
-  )
+  );
 };

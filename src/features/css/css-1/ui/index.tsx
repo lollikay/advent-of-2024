@@ -46,17 +46,17 @@ export const CssChallenge01 = () => {
                  * This is purely convenience generation logic for the demo page.
                  */
                 if (photoIndex > index) return null;
-                if ((photoIndex + 1) > maxVisiblePhotos) return null;
+                if (photoIndex + 1 > maxVisiblePhotos) return null;
                 const shouldShowOverflow =
-                  index === (galleries.length - 1) &&
-                  photoIndex === (maxVisiblePhotos - 1) &&
+                  index === galleries.length - 1 &&
+                  photoIndex === maxVisiblePhotos - 1 &&
                   overflowLength > 0;
                 return (
                   <PhotoGalleryCard
                     src={photo.src}
                     overflowLength={shouldShowOverflow ? overflowLength : 0}
                   />
-                )
+                );
               })}
             </div>
           </div>

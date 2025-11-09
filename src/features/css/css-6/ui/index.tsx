@@ -9,10 +9,12 @@ export const CssChallenge06 = () => {
     <>
       <section class={`${containerStyle.container} ${style.cssChallenge06}`}>
         <h1>CSS Challenge 06: scroll progress</h1>
-        {Array(3).fill(null).map(() => (
-          <TextContent />
-        ))}
+        {Array(3)
+          .fill(null)
+          .map(() => (
+            <TextContent />
+          ))}
       </section>
     </>
-  )
-}
+  );
+};

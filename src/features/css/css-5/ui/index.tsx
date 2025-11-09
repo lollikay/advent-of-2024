@@ -11,11 +11,9 @@ export const CssChallenge05 = () => {
         <h1>CSS Challenge 05: footer appears on scroll</h1>
         <TextContent />
         <footer>
-          <p>
-            &copy; Advent of 2024 - Css Challenge 05: footer appears on scroll
-          </p>
+          <p>&copy; Advent of 2024 - Css Challenge 05: footer appears on scroll</p>
         </footer>
       </section>
     </>
-  )
-}
+  );
+};

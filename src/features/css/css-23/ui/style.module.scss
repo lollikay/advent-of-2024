@@ -23,7 +23,7 @@
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
-  
+
   &:hover {
     .toggleIcon,
     .toggleIcon::before,
@@ -63,10 +63,12 @@
       height: 2px;
       background-color: var(--c-base-light);
       border-radius: 0.125rem;
-      transition: transform 0.3s, background-color 0.3s;
+      transition:
+        transform 0.3s,
+        background-color 0.3s;
     }
   }
-  
+
   &Icon {
     position: relative;
 
@@ -95,7 +97,7 @@
   margin: 0;
   padding: 0;
   transition: height 0.4s;
-  
+
   li {
     margin: 0 0 1rem;
     padding: 0;

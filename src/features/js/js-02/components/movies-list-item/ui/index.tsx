@@ -8,17 +8,10 @@ interface MoviesListItemProps {
   movie: MovieType;
 }
 
-export const MoviesListItem = ({
-  movie,
-}: MoviesListItemProps) => {
+export const MoviesListItem = ({ movie }: MoviesListItemProps) => {
   return (
-    <li
-      class={style.moviesItem}
-      data-js-combobox-list-item={JSON.stringify(movie)}
-    >
-      <Movie
-        item={movie}
-      />
+    <li class={style.moviesItem} data-js-combobox-list-item={JSON.stringify(movie)}>
+      <Movie item={movie} />
     </li>
   );
-}
+};

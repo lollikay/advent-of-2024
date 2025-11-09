@@ -43,11 +43,11 @@ export class Combobox<T extends ComboboxItem> {
   constructor({
     container,
     list,
-    item
+    item,
   }: {
-    container: HTMLElement,
-    list: ({ items }: { items: T[] }) => string | JSX.Element,
-    item: ({ item }: { item: T }) => string | JSX.Element,
+    container: HTMLElement;
+    list: ({ items }: { items: T[] }) => string | JSX.Element;
+    item: ({ item }: { item: T }) => string | JSX.Element;
   }) {
     this.container = container;
     this.toggle = this.container.querySelector<HTMLElement>(selectors.toggle);
@@ -62,7 +62,9 @@ export class Combobox<T extends ComboboxItem> {
   }
 
   private getConfig() {
-    const data = this.container.getAttribute(getAttributeNameFromAttributeSelector(selectors.combobox));
+    const data = this.container.getAttribute(
+      getAttributeNameFromAttributeSelector(selectors.combobox)
+    );
     if (data) {
       try {
         this.config = JSON.parse(data) as ComboboxConfig<T>;
@@ -125,7 +127,7 @@ export class Combobox<T extends ComboboxItem> {
   private onSearch(e: Event) {
     const { value } = e.target as HTMLInputElement;
     if (this.items.length > 0) {
-      const filteredItems = this.items.filter(item =>
+      const filteredItems = this.items.filter((item) =>
         item.title.toLowerCase().includes(value.toLowerCase())
       );
       if (!this.content) {
@@ -136,10 +138,9 @@ export class Combobox<T extends ComboboxItem> {
         this.content.innerHTML = `<div class="${style.noResults}">No results found</div>`;
         return;
       }
-      this.content.innerHTML = Html.createElement(
-        this.listElement,
-        { items: filteredItems },
-      ).toString();
+      this.content.innerHTML = Html.createElement(this.listElement, {
+        items: filteredItems,
+      }).toString();
     }
   }
 
@@ -160,7 +161,9 @@ export class Combobox<T extends ComboboxItem> {
     if (!itemElement) {
       return;
     }
-    const itemDataAttr = itemElement.getAttribute(getAttributeNameFromAttributeSelector(selectors.item));
+    const itemDataAttr = itemElement.getAttribute(
+      getAttributeNameFromAttributeSelector(selectors.item)
+    );
     if (!itemDataAttr) {
       console.error('Combobox: Selected item data attribute not found.');
       this.clearSelected();
@@ -179,10 +182,7 @@ export class Combobox<T extends ComboboxItem> {
       return;
     }
     this.toggle?.classList.add(style.hasSelectedItem);
-    this.selected.innerHTML = Html.createElement(
-      this.itemElement,
-      { item: itemData },
-    ).toString();
+    this.selected.innerHTML = Html.createElement(this.itemElement, { item: itemData }).toString();
     this.clearSearch();
     this.close();
     this.button?.addEventListener('click', this.boundClearButtonClickHandler);

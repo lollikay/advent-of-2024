@@ -1,8 +1,8 @@
 .toggle {
-  --c-toggle-bg: #7D7D7D;
+  --c-toggle-bg: #7d7d7d;
   --c-toggle-handle: #000;
   --c-toggle-border: transparent;
-  --c-active-toggle-bg: #00FF94;
+  --c-active-toggle-bg: #00ff94;
   --c-active-toggle-handle: #000;
   --c-active-toggle-border: transparent;
   --toggle-size: 3rem;
@@ -63,7 +63,9 @@
       width: var(--toggle-size);
       background: var(--c-toggle-handle);
       border-radius: 50%;
-      transition: left 0.3s, background-color 0.2s;
+      transition:
+        left 0.3s,
+        background-color 0.2s;
     }
   }
 }

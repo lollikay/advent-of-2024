@@ -38,11 +38,15 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: rgba(241, 113, 89, 1) url('assets/images/css-challenge-21/sun.svg') no-repeat center center / 2rem 2rem;
-  transition: left 0.3s, background 0.3s;
+  background: rgba(241, 113, 89, 1) url('assets/images/css-challenge-21/sun.svg') no-repeat center
+    center / 2rem 2rem;
+  transition:
+    left 0.3s,
+    background 0.3s;
 
   input:checked + & {
     left: 4.375rem;
-    background: rgba(167, 194, 222, 1) url('assets/images/css-challenge-21/moon.svg') no-repeat center center / 2rem 2rem;
+    background: rgba(167, 194, 222, 1) url('assets/images/css-challenge-21/moon.svg') no-repeat
+      center center / 2rem 2rem;
   }
 }

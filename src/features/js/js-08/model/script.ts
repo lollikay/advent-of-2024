@@ -1,8 +1,8 @@
-import style from "../ui/style.module.scss";
+import style from '../ui/style.module.scss';
 
 const selectors = Object.freeze({
-  container: "[data-js-input-tags]",
-  input: "[data-js-input]"
+  container: '[data-js-input-tags]',
+  input: '[data-js-input]',
 });
 
 class TagsInput {
@@ -17,22 +17,22 @@ class TagsInput {
   private inputToTag(input: string): void {
     if (!this.inputEl) return;
 
-    const tag = document.createElement("button");
+    const tag = document.createElement('button');
     tag.textContent = input;
-    tag.contentEditable = "false";
+    tag.contentEditable = 'false';
     tag.className = style.tag;
 
     this.inputEl.appendChild(tag);
-    this.inputEl.appendChild(document.createTextNode(" "));
+    this.inputEl.appendChild(document.createTextNode(' '));
   }
 
   private processInitialInput() {
     if (!this.inputEl) return;
 
-    const text = this.inputEl.textContent || "";
-    const parts = text.split(",");
+    const text = this.inputEl.textContent || '';
+    const parts = text.split(',');
 
-    this.inputEl.innerHTML = "";
+    this.inputEl.innerHTML = '';
 
     parts.forEach((part) => {
       const trimmed = part.trim();
@@ -43,12 +43,12 @@ class TagsInput {
   }
 
   private onInput(e: Event) {
-    console.debug("Input event:", e);
+    console.debug('Input event:', e);
   }
 
   private init() {
     if (this.inputEl) {
-      this.inputEl.addEventListener("input", this.onInput.bind(this));
+      this.inputEl.addEventListener('input', this.onInput.bind(this));
       this.processInitialInput();
     }
   }

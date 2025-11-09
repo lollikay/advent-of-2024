@@ -32,27 +32,27 @@ export const EyeIcon = () => (
     />
     <path
       d="M54.9999 22.5V5.5"
-      stroke="currentColor" 
-      stroke-width="10" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
+      stroke="currentColor"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       class={style.lash}
-      />
+    />
     <path
       d="M91 34.9707L100.686 21"
-      stroke="currentColor" 
-      stroke-width="10" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
+      stroke="currentColor"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       class={style.lash}
-      />
+    />
     <path
       d="M9.00049 20.9996L18.6856 34.971"
-      stroke="currentColor" 
-      stroke-width="10" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
+      stroke="currentColor"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       class={style.lash}
-      />
+    />
   </svg>
 );

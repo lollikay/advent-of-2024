@@ -21,12 +21,7 @@ export const Toggle = ({
   return (
     <label class={`${style.toggle} ${style[className]}`}>
       {label && labelPosition === LabelPosition.LEFT && label}
-      <input
-        type="checkbox"
-        class={style.toggleCheckbox}
-        checked={checked}
-        disabled={disabled}
-      />
+      <input type="checkbox" class={style.toggleCheckbox} checked={checked} disabled={disabled} />
       <span class={style.toggleElement}></span>
       {label && labelPosition === LabelPosition.RIGHT && label}
     </label>

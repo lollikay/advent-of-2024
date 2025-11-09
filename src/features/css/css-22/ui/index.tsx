@@ -7,9 +7,7 @@ import style from './style.module.scss';
 export const CssChallenge22 = () => {
   return (
     <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
-      <h1>
-        CSS Challenge 22: Product Grid
-      </h1>
+      <h1>CSS Challenge 22: Product Grid</h1>
       <ol class={style.products}>
         <li>
           <div class={style.productImage}>
@@ -22,9 +20,10 @@ export const CssChallenge22 = () => {
           <h1>Made in Dutch Oven</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Made In</a>
-            <p>The Made In blew us away with its nonstick qualities, heat distribution, and moisture retention. Plus it's
-              available in
-              several beautiful colors. <a href="#">Read More</a></p>
+            <p>
+              The Made In blew us away with its nonstick qualities, heat distribution, and moisture
+              retention. Plus it's available in several beautiful colors. <a href="#">Read More</a>
+            </p>
             <h2>Pros</h2>
             <ul class={style.pros}>
               <li>Excellent cooking results</li>
@@ -50,9 +49,11 @@ export const CssChallenge22 = () => {
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
             <a href="#">Check Price on Walmart</a>
-            <p>A long-time favorite, Le Creuset's Dutch oven does not disappoint. Note that the slightly larger size means it
-              needs a
-              bit more space than others. <a href="#">Read More</a></p>
+            <p>
+              A long-time favorite, Le Creuset's Dutch oven does not disappoint. Note that the
+              slightly larger size means it needs a bit more space than others.{' '}
+              <a href="#">Read More</a>
+            </p>
             <h2>Pros</h2>
             <ul class={style.pros}>
               <li>Large handles</li>
@@ -78,9 +79,10 @@ export const CssChallenge22 = () => {
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
             <a href="#">Check Price on Target</a>
-            <p>This Dutch oven cooks as well as any high-end version and is a great buy in any color, as long as you don't
-              mind it's
-              slightly narrow bottom. <a href="#">Read More</a></p>
+            <p>
+              This Dutch oven cooks as well as any high-end version and is a great buy in any color,
+              as long as you don't mind it's slightly narrow bottom. <a href="#">Read More</a>
+            </p>
             <h2>Pros</h2>
             <ul class={style.pros}>
               <li>Cleans easily</li>
@@ -105,9 +107,11 @@ export const CssChallenge22 = () => {
           <h1>HexClad 5-Quart Dutch Oven</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
-            <p>This stainless steel Dutch oven is lightweight and excels at browning and baking bread. However, its
-              lightweight build
-              means cooking results can vary. <a href="#">Read More</a></p>
+            <p>
+              This stainless steel Dutch oven is lightweight and excels at browning and baking
+              bread. However, its lightweight build means cooking results can vary.{' '}
+              <a href="#">Read More</a>
+            </p>
             <h2>Pros</h2>
             <ul class={style.pros}>
               <li>Lightweight</li>
@@ -133,8 +137,10 @@ export const CssChallenge22 = () => {
           <h1>Staub Cast Iron 5.5-Quart Round Cocotte</h1>
           <div class={style.productInfo}>
             <a href="#">Check Price on Amazon</a>
-            <p>Highly rated and a pro with any cooking task you throw at it, the Staub Cast Iron Dutch oven is well worth its
-              price...and weight. <a href="#">Read More</a></p>
+            <p>
+              Highly rated and a pro with any cooking task you throw at it, the Staub Cast Iron
+              Dutch oven is well worth its price...and weight. <a href="#">Read More</a>
+            </p>
             <h2>Pros</h2>
             <ul class={style.pros}>
               <li>Cleans easily</li>
