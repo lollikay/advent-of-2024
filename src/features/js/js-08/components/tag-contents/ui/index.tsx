@@ -11,10 +11,7 @@ export const TagContents = ({ text }: TagProps) => {
   return (
     <>
       {text}
-      <button
-        class={style.button}
-        aria-label="Remove tag"
-      >
+      <button class={style.button} aria-label="Remove tag">
         <CloseIcon />
       </button>
     </>
