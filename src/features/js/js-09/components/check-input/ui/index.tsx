@@ -22,7 +22,7 @@ export const CheckInput = ({
   const className = type === 'checkbox' ? style.checkbox : style.radio;
 
   return (
-    <span class={className}>
+    <label class={className}>
       <input
         type={type}
         name={name}
@@ -33,6 +33,6 @@ export const CheckInput = ({
       />
       <span class={style.checkmark}></span>
       <span class={style.label}>{label}</span>
-    </span>
+    </label>
   );
 };

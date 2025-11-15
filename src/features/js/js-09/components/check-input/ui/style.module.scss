@@ -1,0 +1,82 @@
+.checkbox,
+.radio {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  cursor: pointer;
+
+  .input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    &:checked + .checkmark {
+      border-color: var(--c-accent-1);
+    }
+  }
+
+  .checkmark {
+    --size: 1.5rem;
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid #fcf5ed99;
+  }
+
+  .label {
+    font-size: 1.5rem;
+  }
+}
+
+.radio {
+  .input {
+    &:checked + .checkmark {
+      border-width: 0.375rem;
+    }
+  }
+
+  .checkmark {
+    border-radius: 50%;
+    transition: border-width 0.3s, border-color 0.3s;
+  }
+}
+
+.checkbox {
+  .input {
+    &:checked + .checkmark {
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  .checkmark {
+    transition: border-color 0.3s;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      background-color: var(--c-accent-1);
+      mask:
+          url('/assets/images/js-challenge-09/check.svg') center / 1.5rem no-repeat,
+          linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
+      mask-composite: exclude;
+      transition: background-color 0.3s;
+
+      @starting-style {
+        background-color: transparent;
+      }
+    }
+  }
+}

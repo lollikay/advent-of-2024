@@ -4,10 +4,11 @@ import containerStyle from '@shared/ui/container/style.module.scss';
 import style from './style.module.scss';
 import { Button, CheckInput, Label, TextInput } from '../components';
 import { movies, reindeers } from '../model/data';
+import marginStyle from '@shared/ui/margins/style.module.scss';
 
 export const JsChallenge09 = () => {
   return (
-    <div class={style.dark}>
+    <div class={style.jsChallenge09}>
       <section class={containerStyle.container} data-js-challenge="09">
         <h1>JS Challenge 09: Persistent data in a form</h1>
         <form class={style.form}>
@@ -39,13 +40,14 @@ export const JsChallenge09 = () => {
               controlName="movies"
             />
             {movies.map((movie) => (
-              <CheckInput
-                type="checkbox"
-                name="movies"
-                value={movie.value}
-                label={movie.label}
-
-              />
+              <div class={marginStyle.mb4}>
+                <CheckInput
+                  type="checkbox"
+                  name="movies"
+                  value={movie.value}
+                  label={movie.label}
+                />
+              </div>
             ))}
           </div>
           <div>

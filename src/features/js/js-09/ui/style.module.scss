@@ -1,0 +1,24 @@
+.jsChallenge09 {
+  --form-width: 40rem;
+
+  padding: 2rem 0;
+  background: var(--c-base-dark);
+  color: var(--c-base-light);
+}
+
+.form {
+  max-width: var(--form-width);
+
+  &Control {
+    margin-bottom: 2rem;
+  }
+}
+
+.grid {
+  --col-width: calc(var(--form-width) / 3 - 1rem * 2);
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-width), 1fr));
+  max-width: var(--form-width);
+}
