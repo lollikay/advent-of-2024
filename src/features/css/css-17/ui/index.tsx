@@ -5,7 +5,9 @@ import style from './style.module.scss';
 export const CssChallenge17 = () => {
   return (
     <>
-      <h1>CSS Challenge 17: Newsletter signup form</h1>
+      <div class={style.container}>
+        <h1>CSS Challenge 17: Newsletter signup form</h1>
+      </div>
       <section class={style.section}>
         <div class={style.container}>
           <h1>NEWSLETTER SIGNUP</h1>

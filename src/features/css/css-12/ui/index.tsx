@@ -36,10 +36,10 @@ const testies = [
 export const CssChallenge12 = () => {
   return (
     <div class={containerStyle.container}>
-      <h2>CSS Challenge 12: Testimonials</h2>
+      <h1>CSS Challenge 12: Testimonials</h1>
       {layouts.map((layout, index) => (
         <div class={index % 2 === 1 ? style.invertedSection : ''}>
-          <h3>Style {index + 1}</h3>
+          <h2>Style {index + 1}</h2>
           <section class={marginStyle.mb5}>
             <div class={`${style.testimonials} ${style[layout]}`}>
               {testies.map((testy) => (
