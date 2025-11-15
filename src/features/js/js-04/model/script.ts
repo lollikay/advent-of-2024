@@ -1,10 +1,10 @@
 import { getAttributeNameFromAttributeSelector } from './../../../../shared/utils/getAttributeNameFromDataSelector';
-import { jsChallengeAttribute } from "@shared/model/constants";
+import { jsChallengeAttribute } from '@shared/model/constants';
 
 const selectors = Object.freeze({
   container: `[${jsChallengeAttribute}="04"]`,
-  panel: "[data-js-panel]",
-  resizer: "[data-js-resizer]",
+  panel: '[data-js-panel]',
+  resizer: '[data-js-resizer]',
 });
 
 const defaultResizerSize = 10;
@@ -53,11 +53,11 @@ class Resizer {
   }
 
   private onResize(event: MouseEvent) {
-    if(!this.container) {
+    if (!this.container) {
       return;
     }
 
-    if(!this.leftPanel || !this.rightPanel) {
+    if (!this.leftPanel || !this.rightPanel) {
       return;
     }
 
@@ -67,8 +67,7 @@ class Resizer {
 
     if (this.direction === 'horizontal') {
       const possibleLeftWidth = event.clientX - containerRect.left;
-      const { leftPanelSize, rightPanelSize } =
-        this.getPanelSizes(possibleLeftWidth, totalWidth);
+      const { leftPanelSize, rightPanelSize } = this.getPanelSizes(possibleLeftWidth, totalWidth);
 
       this.leftPanel.style.width = `${leftPanelSize}px`;
       this.rightPanel.style.width = `${rightPanelSize}px`;
@@ -77,8 +76,7 @@ class Resizer {
     }
 
     const possibleTopHeight = event.clientY - containerRect.top;
-    const { leftPanelSize, rightPanelSize } =
-      this.getPanelSizes(possibleTopHeight, totalHeight);
+    const { leftPanelSize, rightPanelSize } = this.getPanelSizes(possibleTopHeight, totalHeight);
 
     this.leftPanel.style.height = `${leftPanelSize}px`;
     this.rightPanel.style.height = `${rightPanelSize}px`;
@@ -93,12 +91,13 @@ class Resizer {
     document.addEventListener('mousemove', this.boundOnResize);
     document.addEventListener('mouseup', this.boundOnMouseUp);
   }
-  
+
   private init() {
-    this.direction = this.resizerEl
-      .getAttribute(
-        getAttributeNameFromAttributeSelector(selectors.resizer)
-      ) === 'horizontal' ? 'horizontal' : 'vertical';
+    this.direction =
+      this.resizerEl.getAttribute(getAttributeNameFromAttributeSelector(selectors.resizer)) ===
+      'horizontal'
+        ? 'horizontal'
+        : 'vertical';
     this.resizerSize = this.getResizerSize();
     this.resizerEl.addEventListener('mousedown', this.boundOnMouseDown);
   }

@@ -16,18 +16,20 @@
     background-color: transparent;
     border: 0;
     color: var(--c-accent-1);
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
     cursor: pointer;
-    
+
     &:hover {
       background-color: var(--c-accent-2);
       color: var(--c-base-light);
     }
-  
+
     &:first-of-type {
       grid-column-start: 7;
     }
-    
+
     &.selected {
       background-color: var(--c-accent-1);
       color: var(--c-base-light);

@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.turbo
+.turbo/**
+.cache
+.vscode
+*.lock
+coverage
+public
+*.log

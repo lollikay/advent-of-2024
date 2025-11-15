@@ -26,7 +26,7 @@ export class CalendarService {
   private clearActiveClasses() {
     if (!this.calendar) return;
     const activeElements = this.calendar.querySelectorAll(`.${selectedDayClass}`);
-    activeElements.forEach(el => el.classList.remove(selectedDayClass));
+    activeElements.forEach((el) => el.classList.remove(selectedDayClass));
   }
 
   private toggleDayClass(element: HTMLElement) {

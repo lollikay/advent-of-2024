@@ -17,10 +17,17 @@
     bottom: 0;
     border: 0.4em solid transparent;
     border-radius: 5em;
-    background: linear-gradient(90deg, #F4BB44 2.14%, #E0367C 32.72%, #6762D2 69.42%, #6ED3FA 99.49%) no-repeat;
+    background: linear-gradient(
+        90deg,
+        #f4bb44 2.14%,
+        #e0367c 32.72%,
+        #6762d2 69.42%,
+        #6ed3fa 99.49%
+      )
+      no-repeat;
     background-origin: border-box;
-    mask: 
-      linear-gradient(#fff 0 0) padding-box, 
+    mask:
+      linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#000 0 0);
     mask-composite: exclude;
   }

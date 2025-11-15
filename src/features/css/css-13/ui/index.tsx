@@ -48,7 +48,7 @@ export const CssChallenge13 = () => {
   return (
     <>
       <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
-        <h2>CSS Challenge 13: 3-state toggle</h2>
+        <h1>CSS Challenge 13: 3-state toggle</h1>
         <Tabs tabs={tabs} />
       </section>
       <section class={containerStyle.container}>
@@ -56,5 +56,5 @@ export const CssChallenge13 = () => {
         <AltTabs tabs={themedTabs} />
       </section>
     </>
-  )
+  );
 };

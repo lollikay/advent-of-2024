@@ -8,17 +8,11 @@ interface MoviesListProps {
   items: MovieType[];
 }
 
-export const MoviesList = ({
-  items,
-}: MoviesListProps) => {
+export const MoviesList = ({ items }: MoviesListProps) => {
   return (
-    <ul
-      class={style.movies}
-    >
+    <ul class={style.movies}>
       {items.map((movie) => (
-        <MoviesListItem
-          movie={movie}
-        />
+        <MoviesListItem movie={movie} />
       ))}
     </ul>
   );

@@ -15,5 +15,5 @@ export const CssChallenge07 = () => {
         <ControlsList elementClass="themed" />
       </section>
     </>
-  )
-}
+  );
+};

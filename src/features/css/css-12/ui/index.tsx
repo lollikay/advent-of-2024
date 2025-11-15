@@ -4,47 +4,42 @@ import containerStyle from '@shared/ui/container/style.module.scss';
 import marginStyle from '@shared/ui/margins/style.module.scss';
 import style from './style.module.scss';
 
-const layouts = [
-  "straight",
-  "zebra",
-  "centered",
-  "columns",
-];
+const layouts = ['straight', 'zebra', 'centered', 'columns'];
 
 const testies = [
   {
     image: 'avatar-1',
     author: 'Samantha L.',
     position: 'Junior Developer',
-    text: 'Advent of CSS was exactly what I needed to level up my design skills. Each day\'s challenge gave me the perfect mix of creativity and problem- solving.By Christmas, I felt like a CSS wizard!'
+    text: "Advent of CSS was exactly what I needed to level up my design skills. Each day's challenge gave me the perfect mix of creativity and problem- solving.By Christmas, I felt like a CSS wizard!",
   },
   {
     image: 'avatar-2',
     author: 'James T.',
     position: 'Aspiring Frontend Developer',
-    text: 'I looked forward to every challenge during Advent of CSS! The tasks were engaging and varied, making me excited to tackle something new each day.My portfolio is shining brighter than ever now.'
+    text: 'I looked forward to every challenge during Advent of CSS! The tasks were engaging and varied, making me excited to tackle something new each day.My portfolio is shining brighter than ever now.',
   },
   {
     image: 'avatar-3',
     author: 'Ryan G.',
     position: 'CSS Newbie',
-    text: 'As someone just starting out in web design, Advent of CSS was incredibly approachable. The challenges ranged from beginner- friendly to mildly complex, so I always felt like I was learning without being overwhelmed.'
+    text: 'As someone just starting out in web design, Advent of CSS was incredibly approachable. The challenges ranged from beginner- friendly to mildly complex, so I always felt like I was learning without being overwhelmed.',
   },
   {
     image: 'avatar-4',
     author: 'Elena S.',
     position: 'Frontend Developer',
-    text: 'Advent of CSS was the gift I didn’t know I needed. By the end of the month, my understanding of layouts, animations, and modern techniques had completely transformed. Can\'t wait for next year!'
-  }
+    text: "Advent of CSS was the gift I didn’t know I needed. By the end of the month, my understanding of layouts, animations, and modern techniques had completely transformed. Can't wait for next year!",
+  },
 ];
 
 export const CssChallenge12 = () => {
   return (
     <div class={containerStyle.container}>
-      <h2>CSS Challenge 12: Testimonials</h2>
+      <h1>CSS Challenge 12: Testimonials</h1>
       {layouts.map((layout, index) => (
         <div class={index % 2 === 1 ? style.invertedSection : ''}>
-          <h3>Style {index + 1}</h3>
+          <h2>Style {index + 1}</h2>
           <section class={marginStyle.mb5}>
             <div class={`${style.testimonials} ${style[layout]}`}>
               {testies.map((testy) => (
@@ -58,16 +53,9 @@ export const CssChallenge12 = () => {
                       alt={testy.author}
                     />
                   </div>
-                  <div class={style.testimonial}>
-                      {testy.text}
-                  </div>
+                  <div class={style.testimonial}>{testy.text}</div>
                   <div class={style.cite}>
-                    <strong>
-                        {testy.author}
-                    </strong>,{' '}
-                    <em>
-                      {testy.position}
-                    </em>
+                    <strong>{testy.author}</strong>, <em>{testy.position}</em>
                   </div>
                 </article>
               ))}
@@ -76,5 +64,5 @@ export const CssChallenge12 = () => {
         </div>
       ))}
     </div>
-  )
+  );
 };

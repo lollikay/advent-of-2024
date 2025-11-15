@@ -1,0 +1,32 @@
+.button {
+  --visible-size: 1.5rem;
+  --clickable-size: 2.5rem;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--visible-size);
+  height: var(--visible-size);
+  padding: 0.25rem;
+  margin: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--c-accent-1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--clickable-size);
+    height: var(--clickable-size);
+    transform: translate(-50%, -50%);
+  }
+}

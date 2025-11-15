@@ -26,15 +26,11 @@ export const CssChallenge10 = () => {
         <div class={style.galleryTrack}>
           {galleryItems.map((item) => (
             <div class={style.item}>
-              <img
-                class={style.image}
-                src={item}
-                alt=""
-              />
+              <img class={style.image} src={item} alt="" />
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 };

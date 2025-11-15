@@ -25,14 +25,8 @@
 
 .skeleton {
   border-radius: 0.25rem;
-  background: 
-    #ccc
-    linear-gradient(
-      to right,
-    transparent 40%,
-    #eee,
-    transparent 60%
-  ) no-repeat 50% 0 / 200% 100%;
+  background: #ccc linear-gradient(to right, transparent 40%, #eee, transparent 60%) no-repeat 50%
+    0 / 200% 100%;
   color: transparent;
   pointer-events: none;
   animation: pulse 3s infinite;

@@ -44,5 +44,5 @@ export const CssChallenge02 = () => {
         </div>
       ))}
     </section>
-  )
-}
+  );
+};

@@ -6,16 +6,10 @@ import { EyeIcon, LockIcon } from '../components';
 
 export const JsChallenge01 = () => {
   return (
-    <section
-      class={containerStyle.container}
-      data-js-challenge="01"
-    >
+    <section class={containerStyle.container} data-js-challenge="01">
       <h1>JS Challenge 01: Password input</h1>
       <form>
-        <label
-          class={style.inputGroup}
-          data-js-input-group
-        >
+        <label class={style.inputGroup} data-js-input-group>
           <span class={style.label} title="Password">
             <LockIcon />
           </span>
@@ -28,12 +22,7 @@ export const JsChallenge01 = () => {
             data-js-input
           />
           <span class={style.action}>
-            <button
-              class={style.iconButton}
-              title="Toggle password"
-              data-js-action
-              type="button"
-            >
+            <button class={style.iconButton} title="Toggle password" data-js-action type="button">
               <EyeIcon />
             </button>
           </span>

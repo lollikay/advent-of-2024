@@ -1,9 +1,7 @@
 const selector = '[data-js-textarea]';
 
 class ResizableTextarea {
-  constructor(
-    private element: HTMLTextAreaElement
-  ) {
+  constructor(private element: HTMLTextAreaElement) {
     this.init();
   }
 
@@ -15,7 +13,7 @@ class ResizableTextarea {
   onInput = () => {
     this.adjustHeight();
   };
-  
+
   init() {
     this.adjustHeight();
     this.element.addEventListener('input', this.onInput);
@@ -23,8 +21,7 @@ class ResizableTextarea {
 }
 
 export const init = () => {
-  document.querySelectorAll<HTMLTextAreaElement>(selector)
-    .forEach(element => {
-      new ResizableTextarea(element)
-    });
+  document.querySelectorAll<HTMLTextAreaElement>(selector).forEach((element) => {
+    new ResizableTextarea(element);
+  });
 };

@@ -41,10 +41,10 @@
   &::before {
     left: calc(var(--border-width) * -2);
     clip-path: polygon(
-      0 0, 
-      100% 0, 
-      100% var(--border-width), 
-      var(--border-width) var(--border-width), 
+      0 0,
+      100% 0,
+      100% var(--border-width),
+      var(--border-width) var(--border-width),
       var(--border-width) 100%,
       0 100%
     );
@@ -53,11 +53,11 @@
   &::after {
     right: calc(var(--border-width) * -2);
     clip-path: polygon(
-      0 0, 
-      100% 0, 
-      100% 100%, 
-      calc(100% - var(--border-width)) 100%, 
-      calc(100% - var(--border-width)) var(--border-width), 
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(100% - var(--border-width)) 100%,
+      calc(100% - var(--border-width)) var(--border-width),
       0 var(--border-width)
     );
   }
@@ -94,7 +94,7 @@
   &Input {
     width: 100%;
     background-color: transparent;
-    
+
     &:focus {
       outline-color: var(--c-accent-1);
     }
@@ -108,7 +108,9 @@
     background-color: var(--c-accent-1);
     border: 0px;
     color: var(--c-base-light);
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
     mix-blend-mode: multiply;
 
     &:hover {

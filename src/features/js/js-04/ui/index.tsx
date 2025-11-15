@@ -7,37 +7,22 @@ export const JsChallenge04 = () => {
   return (
     <section class={containerStyle.container}>
       <h1>JS Challenge 04: Resizeable panels</h1>
-      <div
-        class={style.verticalGrid}
-        data-js-challenge="04"
-      >
-        <div
-          class={style.topPanel}
-          data-js-panel="top"
-        ></div>
+      <div class={style.verticalGrid} data-js-challenge="04">
+        <div class={style.topPanel} data-js-panel="top"></div>
         <button
-          class={[style.resizer, style.horizontal].join(" ")}
+          class={[style.resizer, style.horizontal].join(' ')}
           type="button"
           data-js-resizer="vertical"
         ></button>
-        <div
-          class={style.bottomPanel}
-          data-js-panel="bottom"
-        >
+        <div class={style.bottomPanel} data-js-panel="bottom">
           <div class={style.horizontalGrid}>
-            <div
-              class={style.leftPanel}
-              data-js-panel="left"
-            ></div>
+            <div class={style.leftPanel} data-js-panel="left"></div>
             <button
-              class={[style.resizer, style.vertical].join(" ")}
+              class={[style.resizer, style.vertical].join(' ')}
               type="button"
               data-js-resizer="horizontal"
             ></button>
-            <div
-              class={style.rightPanel}
-              data-js-panel="right"
-            ></div>
+            <div class={style.rightPanel} data-js-panel="right"></div>
           </div>
         </div>
       </div>

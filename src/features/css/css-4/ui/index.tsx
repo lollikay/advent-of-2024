@@ -14,28 +14,26 @@ export const CssChallenge04 = () => {
         <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
           <h1>Shorter heading</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
-            Eius rem ab esse ullam ut a reprehenderit accusamus cupiditate fugiat corrupti,{' '}
-            neque veniam quidem iste maxime consectetur qui alias deleniti illum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rem ab esse ullam ut a
+            reprehenderit accusamus cupiditate fugiat corrupti, neque veniam quidem iste maxime
+            consectetur qui alias deleniti illum.
           </p>
         </section>
         <section class={`${containerStyle.container} ${marginStyle.mb5}`}>
           <h1 style="color: var(--c-accent-1);">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,{' '}
-            architecto commodi modi facilis magni assumenda. Earum,{' '}
-            error fugiat perferendis accusamus optio consequatur iste deleniti maiores,{' '}
-            voluptates voluptatem aspernatur obcaecati aut.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, architecto commodi
+            modi facilis magni assumenda. Earum, error fugiat perferendis accusamus optio
+            consequatur iste deleniti maiores, voluptates voluptatem aspernatur obcaecati aut.
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
-            Eius rem ab esse ullam ut a reprehenderit accusamus cupiditate fugiat corrupti,{' '}
-            neque veniam quidem iste maxime consectetur qui alias deleniti illum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rem ab esse ullam ut a
+            reprehenderit accusamus cupiditate fugiat corrupti, neque veniam quidem iste maxime
+            consectetur qui alias deleniti illum.
           </p>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.{' '}
-            Mollitia minus sapiente eveniet, earum accusamus qui architecto?{' '}
-            Ipsum expedita iste necessitatibus doloremque, quis libero saepe facilis{' '}
-            sed eos eum cupiditate ipsam?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia minus sapiente
+            eveniet, earum accusamus qui architecto? Ipsum expedita iste necessitatibus doloremque,
+            quis libero saepe facilis sed eos eum cupiditate ipsam?
           </p>
         </section>
       </div>
@@ -43,12 +41,12 @@ export const CssChallenge04 = () => {
         <section class={containerStyle.container}>
           <h1>Some heading with colored lines</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
-            Eius rem ab esse ullam ut a reprehenderit accusamus cupiditate fugiat corrupti,{' '}
-            neque veniam quidem iste maxime consectetur qui alias deleniti illum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rem ab esse ullam ut a
+            reprehenderit accusamus cupiditate fugiat corrupti, neque veniam quidem iste maxime
+            consectetur qui alias deleniti illum.
           </p>
         </section>
       </div>
     </>
-  )
-}
+  );
+};

@@ -2,13 +2,7 @@
 import Html from '@kitajs/html';
 
 export const LockIcon = () => (
-  <svg
-    width="86"
-    height="112"
-    viewBox="0 0 86 112"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="86" height="112" viewBox="0 0 86 112" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"

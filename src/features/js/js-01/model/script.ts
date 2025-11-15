@@ -14,7 +14,7 @@ const entrySelector = `[${jsChallengeAttribute}="01"] ${selectors.actionButton}`
 
 const togglePassword = (event: Event) => {
   const button = event.currentTarget;
-  if(!(button instanceof HTMLButtonElement)) {
+  if (!(button instanceof HTMLButtonElement)) {
     console.error('Event target is not a button element');
     return;
   }

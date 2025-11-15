@@ -1,6 +1,9 @@
 import { HomePage } from './pages/home/ui/index.tsx';
 import { ChallengesSwitcherService } from './widgets/challenge-container/model/challenges-switcher.service.ts';
-import { CalendarService, eventActiveDayClickByCalendar } from './widgets/calendar/model/calendar.service.ts';
+import {
+  CalendarService,
+  eventActiveDayClickByCalendar,
+} from './widgets/calendar/model/calendar.service.ts';
 import {
   CssChallenge01,
   CssChallenge02,
@@ -33,6 +36,7 @@ import {
   JsChallenge05,
   JsChallenge06,
   JsChallenge07,
+  JsChallenge08,
 } from '@features/index.ts';
 import { destroyChallengeEventName } from '@shared/model/index.ts';
 
@@ -73,6 +77,7 @@ const jsChallengeComponents: Record<number, () => JSX.Element> = {
   5: JsChallenge05,
   6: JsChallenge06,
   7: JsChallenge07,
+  8: JsChallenge08,
 };
 
 const challengesSwitcherService = new ChallengesSwitcherService();

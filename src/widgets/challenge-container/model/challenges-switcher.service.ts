@@ -1,13 +1,11 @@
-import {
-  NoChallenge,
-} from "@features/index";
+import { NoChallenge } from '@features/index';
 
 export const challengeContainerId = 'challenge-container';
 
 export class ChallengesSwitcherService {
   private container = document.getElementById(challengeContainerId);
 
-  constructor() { }
+  constructor() {}
 
   renderChallenge(challengeComponent: () => JSX.Element = NoChallenge) {
     if (!this.container) return;

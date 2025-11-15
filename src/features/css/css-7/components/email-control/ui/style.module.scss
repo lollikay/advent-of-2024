@@ -1,8 +1,8 @@
 .formControl {
-  --c-border: #CFCECE;
-  --c-focus-border: #0015FF;
-  --c-error: #DF0C0C;
-  --c-success: #18D651;
+  --c-border: #cfcece;
+  --c-focus-border: #0015ff;
+  --c-error: #df0c0c;
+  --c-success: #18d651;
   --c-text: #000;
   --c-placeholder: #999;
   --font-size: 1.5rem;
@@ -46,7 +46,9 @@
     top: 50%;
     font-weight: bold;
     transform: translateY(-50%);
-    transition: font-size 0.3s, top 0.3s;
+    transition:
+      font-size 0.3s,
+      top 0.3s;
   }
 
   &Input {

@@ -1,9 +1,9 @@
-import { jsChallengeAttribute } from "@shared/model/constants";
+import { jsChallengeAttribute } from '@shared/model/constants';
 
 const selectors = Object.freeze({
   container: `[${jsChallengeAttribute}="05"]`,
-  input: "[data-js-character-counter]",
-  output: "[data-js-character-count]",
+  input: '[data-js-character-counter]',
+  output: '[data-js-character-count]',
 });
 
 class CharacterCounter {

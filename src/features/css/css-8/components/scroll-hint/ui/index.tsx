@@ -5,17 +5,9 @@ import style from './style.module.scss';
 export const ScrollHint = () => {
   return (
     <div class={style.hint}>
-      <img
-        src="/assets/images/css-challenge-08/arrow-down.svg"
-        class={style.icon}
-        alt=""
-      />
+      <img src="/assets/images/css-challenge-08/arrow-down.svg" class={style.icon} alt="" />
       <span>Scroll</span>
-      <img
-        src="/assets/images/css-challenge-08/arrow-down.svg"
-        class={style.icon}
-        alt=""
-      />
+      <img src="/assets/images/css-challenge-08/arrow-down.svg" class={style.icon} alt="" />
     </div>
-  )
+  );
 };

@@ -14,8 +14,7 @@ export const CssChallenge08 = () => {
             <Navigation />
           </div>
         </header>
-        <main>
-        </main>
+        <main></main>
         <footer>
           <div class={containerStyle.container}>
             <ScrollHint />
@@ -23,5 +22,5 @@ export const CssChallenge08 = () => {
         </footer>
       </section>
     </div>
-  )
-}
+  );
+};

@@ -11,32 +11,21 @@ interface CalendarProps {
   title?: string;
 }
 
-export const Calendar = ({
-  id,
-  title = 'December 2024'
-}: CalendarProps) => {
+export const Calendar = ({ id, title = 'December 2024' }: CalendarProps) => {
   return (
     <section class={style.calendar} id={id}>
       <h1>{title}</h1>
       <div class={style.calendarGrid}>
-        {daysOfWeek.map(day => (
-          <div
-            class={style.calendarDayHeader}
-          >
-            {day}
-          </div>
+        {daysOfWeek.map((day) => (
+          <div class={style.calendarDayHeader}>{day}</div>
         ))}
-        {days.map(day => {
-          const props = {[dayAttribute]: day.toString()};
+        {days.map((day) => {
+          const props = { [dayAttribute]: day.toString() };
           return (
-            <button
-              {...props}
-              class={style.calendarDay}
-              type="button"
-            >
+            <button {...props} class={style.calendarDay} type="button">
               {day}
             </button>
-          )
+          );
         })}
       </div>
     </section>

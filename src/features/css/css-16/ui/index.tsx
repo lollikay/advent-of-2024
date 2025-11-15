@@ -8,7 +8,7 @@ export const CssChallenge16 = () => {
   return (
     <>
       <div class={containerStyle.container}>
-        <h2>CSS Challenge 16: Custom scrollbar</h2>
+        <h1>CSS Challenge 16: Custom scrollbar</h1>
       </div>
       <div class={style.pageContents}>
         <section class={containerStyle.container}>
@@ -16,5 +16,5 @@ export const CssChallenge16 = () => {
         </section>
       </div>
     </>
-  )
+  );
 };

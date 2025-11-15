@@ -1,9 +1,9 @@
-import { slugify } from "./slugify";
+import { slugify } from './slugify';
 
 const selectors = Object.freeze({
-  container: "[data-js-slug]",
-  input: "[data-js-input]",
-  output: "[data-js-output]",
+  container: '[data-js-slug]',
+  input: '[data-js-input]',
+  output: '[data-js-output]',
 });
 
 class SlugGenerator {

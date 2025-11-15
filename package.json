@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,scss,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,scss,css,md}\""
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
@@ -14,6 +16,7 @@
     "eslint": "^9.35.0",
     "globals": "^16.4.0",
     "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
     "sass": "^1.92.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.43.0",

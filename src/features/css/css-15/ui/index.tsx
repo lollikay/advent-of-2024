@@ -13,5 +13,5 @@ export const CssChallenge15 = () => {
         <span>Themed version: Candy cane jingle sleigh reindeer sparkle gingerbread.</span>
       </h1>
     </section>
-  )
+  );
 };

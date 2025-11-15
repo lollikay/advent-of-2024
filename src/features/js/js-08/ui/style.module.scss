@@ -1,0 +1,20 @@
+.input {
+  padding: 0.5rem 1rem;
+  background: var(--c-accent-2);
+  border-radius: 0.5rem;
+  color: var(--c-base-dark);
+
+  &:focus {
+    outline: 2px dashed var(--c-base-dark);
+    outline-offset: 2px;
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.25rem;
+  padding: 0 0.25rem 0 0.5rem;
+  border: 1px solid var(--c-base-dark);
+  border-radius: 1rem;
+}

@@ -6,16 +6,16 @@ import style from './style.module.scss';
 const cards = [
   {
     src: 'assets/images/css-challenge-24/GRAND-TETON.jpg',
-    alt: 'Grand Teton National Park'
+    alt: 'Grand Teton National Park',
   },
   {
     src: 'assets/images/css-challenge-24/ACADIA.jpg',
-    alt: 'Acadia National Park'
+    alt: 'Acadia National Park',
   },
   {
     src: 'assets/images/css-challenge-24/YOSEMITE.jpg',
-    alt: 'Yosemite National Park'
-  }
+    alt: 'Yosemite National Park',
+  },
 ];
 
 export const CssChallenge24 = () => {
