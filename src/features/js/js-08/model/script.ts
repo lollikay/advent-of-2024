@@ -6,6 +6,7 @@ const selectors = Object.freeze({
   container: '[data-js-input-tags]',
   input: '[data-js-input]',
   tag: '[data-js-input-tag]',
+  removeButton: '[data-js-input-tag-remove]',
 });
 
 class TagsInput {
@@ -47,10 +48,39 @@ class TagsInput {
     });
   }
 
-  private onInput(e: Event) {}
+  private setCursorToEnd(element: HTMLDivElement) {
+    const sel = window.getSelection();
+    if (!sel) return;
+    sel.selectAllChildren(element);
+    sel.collapseToEnd();
+  }
 
-  private onTagClick(e: Event) {
+  private onInput(e: Event) {
+    const target = e.target as HTMLDivElement;
+    const text = target.innerText || '';
+
+    if (!text.endsWith(',')) {
+      return;
+    }
+    
+    let newTagText = '';
+    const lastChildNode = target.lastChild;
+    if (lastChildNode && lastChildNode.nodeType === Node.TEXT_NODE) {
+      newTagText = lastChildNode.textContent?.replace(/,+$/, '').trim() || '';
+      if (newTagText) {
+        this.inputToTag(newTagText);
+      }
+      target.removeChild(lastChildNode);
+      this.setCursorToEnd(target);
+    }
+  }
+
+  private onRemoveButtonClick(e: Event) {
     const target = e.target as HTMLElement;
+    const removeButton = target.closest(selectors.removeButton);
+    if (!removeButton) {
+      return;
+    }
     const tag = target.closest(selectors.tag);
     if (tag && this.inputEl) {
       this.inputEl.removeChild(tag);
@@ -62,7 +92,7 @@ class TagsInput {
       this.inputEl.addEventListener('input', this.onInput.bind(this));
       this.processInitialInput();
     }
-    this.container.addEventListener('click', this.onTagClick.bind(this));
+    this.container.addEventListener('click', this.onRemoveButtonClick.bind(this));
   }
 }
 
