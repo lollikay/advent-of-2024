@@ -2,7 +2,7 @@
 
 A modern TypeScript Vite application with SCSS support and @kitajs/html for TSX components.
 
-## CSS challenges:
+## CSS challenges https://www.adventofcss.com/
 
 - CSS Challenge 01: photo gallery. Adjusting layout depending on amount of photoes
 - CSS Challenge 02: toggle switch
@@ -29,7 +29,7 @@ A modern TypeScript Vite application with SCSS support and @kitajs/html for TSX 
 - CSS Challenge 23: Hamburger menu button
 - CSS Challenge 24: Stacking on scroll cards
 
-## JS Challenges
+## JS Challenges https://www.adventofjs.com/
 
 - JS Challenge 01: Password input
 - JS Challenge 02: Combobox
@@ -39,6 +39,7 @@ A modern TypeScript Vite application with SCSS support and @kitajs/html for TSX 
 - JS Challenge 06: Copy to clipboard button
 - JS Challenge 07: Slug generation
 - JS Challenge 08: Tags in the input
+- JS Challenge 09: persistent data in form
 
 ## Features
 
