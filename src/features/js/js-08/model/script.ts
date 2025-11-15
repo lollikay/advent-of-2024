@@ -62,7 +62,7 @@ class TagsInput {
     if (!text.endsWith(',')) {
       return;
     }
-    
+
     let newTagText = '';
     const lastChildNode = target.lastChild;
     if (lastChildNode && lastChildNode.nodeType === Node.TEXT_NODE) {
