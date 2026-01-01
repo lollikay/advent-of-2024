@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--c-accent-1);
+  border: 2px solid var(--c-accent-1);
+  border-radius: 0.625rem;
+  color: var(--c-base-light);
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--c-accent-2);
+    border-color: var(--c-accent-2);
+  }
+}
