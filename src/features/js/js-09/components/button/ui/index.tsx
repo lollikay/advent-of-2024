@@ -9,7 +9,11 @@ interface ButtonProps {
 
 export const Button = ({ type = 'button', label }: ButtonProps) => {
   return (
-    <button class={style.button} type={type}>
+    <button
+      class={style.button}
+      type={type}
+      data-js-button
+    >
       {label}
     </button>
   );

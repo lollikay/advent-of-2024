@@ -9,5 +9,13 @@ interface TextInputProps {
 }
 
 export const TextInput = ({ type = 'text', name, required = false }: TextInputProps) => {
-  return <input type={type} name={name} required={required} class={style.input} />;
+  return (
+    <input
+      type={type}
+      name={name}
+      required={required}
+      class={style.input}
+      data-js-input={name}
+    />
+  );
 };

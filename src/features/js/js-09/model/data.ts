@@ -59,3 +59,10 @@ export const movies = [
     label: 'Die Hard (1988)',
   },
 ];
+
+export const controlNames = Object.freeze({
+  fullName: 'fullName',
+  email: 'email',
+  reindeer: 'reindeer',
+  movies: 'movies',
+});

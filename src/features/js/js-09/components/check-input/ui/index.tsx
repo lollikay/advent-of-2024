@@ -30,6 +30,7 @@ export const CheckInput = ({
         class={style.input}
         value={value}
         checked={checked}
+        data-js-input={name}
       />
       <span class={style.checkmark}></span>
       <span class={style.label}>{label}</span>
