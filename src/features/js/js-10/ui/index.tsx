@@ -18,7 +18,7 @@ export const JsChallenge10 = () => {
       <header class={containerStyle.container}>
         <h1>JS Challenge 10: Floating button</h1>
       </header>
-      <main class={style.main}>
+      <main>
         <div class={style.toggleContainer} data-js-challenge="10">
           <button
             type="button"

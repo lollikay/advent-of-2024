@@ -8,7 +8,7 @@ const selectors = Object.freeze({
 
 const classes = {
   opened: style.opened
-}
+};
 
 class FloatingButtons {
   private container: HTMLDivElement | null = null;
