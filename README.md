@@ -40,6 +40,7 @@ A modern TypeScript Vite application with SCSS support and @kitajs/html for TSX 
 - JS Challenge 07: Slug generation
 - JS Challenge 08: Tags in the input
 - JS Challenge 09: persistent data in form
+- JS Challenge 10: toggle for social links
 
 ## Features
 

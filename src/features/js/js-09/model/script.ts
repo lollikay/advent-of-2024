@@ -28,8 +28,7 @@ class PersistentForm extends LocalStorageService<PersistentFormData> {
     this.init();
   }
 
-  private handleInputChange(event: Event) {
-
+  private handleInputChange() {
     this.saveFormData();
   }
 

@@ -1,6 +1,129 @@
 .section {
-  min-height: 100vh;
+  position: relative;
+  min-height: 500px;
   padding: 2rem 0;
   background: var(--c-base-dark);
   color: var(--c-base-light);
+}
+
+.toggleContainer {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+
+  .toggleOpen {
+    opacity: 1;
+  }
+
+  .toggleClose {
+    opacity: 0;
+  }
+
+  &.opened {
+    .toggleOpen {
+      opacity: 0;
+    }
+
+    .toggleClose {
+      opacity: 1;
+    }
+
+    .socialIcon {
+      transform: 
+        scale(1)
+        rotate(var(--angle))
+        translateX(calc(-90px))
+        rotate(calc(-1 * var(--angle)));
+    }
+  }
+}
+
+.toggle {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  height: 90px;
+  width: 90px;
+  padding: 0;
+  background-color: var(--c-accent-1);
+  border: 0;
+  border-radius: 50%;
+  color: var(--c-base-light);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: var(--c-accent-2);
+    transform: scale(1.05);
+  }
+
+  .toggleOpen,
+  .toggleClose {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    transition: opacity 0.2s;
+  }
+
+  svg {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+.socialIcons {
+  list-style: none;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.socialIcon {
+  --angle: calc(360deg / 10 * var(--i));
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  transition: transform 0.5s;
+  transform: 
+    scale(0)
+    translate(0, 0);
+}
+
+.socialLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  transform: translate(-50%, -50%);
+  background-color: var(--c-accent-1);
+  border-radius: 50%;
+  color: var(--c-base-light);
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: var(--c-accent-2);
+  }
+
+  svg {
+    width: 75%;
+    height: 75%;
+  }
 }

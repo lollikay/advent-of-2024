@@ -14,29 +14,36 @@ const socialIcons = [
 
 export const JsChallenge10 = () => {
   return (
-    <section class={style.section} data-js-challenge="10">
+    <section class={style.section}>
       <header class={containerStyle.container}>
         <h1>JS Challenge 10: Floating button</h1>
       </header>
       <main class={style.main}>
-        <div class={style.toggleContainer} data-js-float>
+        <div class={style.toggleContainer} data-js-challenge="10">
           <button
             type="button"
             class={style.toggle}
             data-js-toggle
           >
-            <span class={style.toggleOpenIcon}>
+            <span class={style.toggleOpen}>
               <MegaphoneIcon />
             </span>
-            <span class={style.toggleCloseIcon}>
+            <span class={style.toggleClose}>
               <CloseIcon />
             </span>
           </button>
           <ul class={style.socialIcons}>
-            {socialIcons.map((Component) => {
+            {socialIcons.map((Component, index) => {
               return (
-                <li class={style.socialIcon}>
-                  <Component />
+                <li
+                  class={style.socialIcon}
+                  style={{
+                    '--i': index - 1,
+                  } as JSX.CSSProperties}
+                >
+                  <a href="" class={style.socialLink}>
+                    <Component />
+                  </a>
                 </li>
               );
             })}
